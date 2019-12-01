@@ -1,0 +1,278 @@
+﻿@model  Translate.ViewModels.Complex.QuestionPageViewModel
+@using Translate.Models.Domain
+
+<div class="container body-content">
+    @*<div class="row postHeader">
+            <div class="postHeading">
+                <span class="postIndexTitle">
+                    @Model.Question.Title
+                </span>
+                <div class="forumLogo" style="background-image:url(@Model.Question.Forum.LanguageFrom.ImageUrl);"></div>
+                <img class="forumLogo" src="~/Content/images/logos/arrow-icon-png-transparent-29.jpg" />
+                <div class="forumLogo" style="background-image:url(@Model.Question.Forum.LanguageTo.ImageUrl);"></div>
+                <span id="headingBtn">
+                    @Html.ActionLink("Wstecz", "Questions", "Forum", new { langFrom = @Model.Question.Forum.LanguageFrom.Abbreviation, langTo = @Model.Question.Forum.LanguageTo.Abbreviation }, new { @class = "btn btn-back", id = "headingBtn" })
+                </span>
+            </div>
+        </div>*@
+
+    <div class="row postHeader">
+        <div class="postHeading">
+
+            <div class="col-md-3">
+                <div class="forumLogo" style="background-image:url(@Model.Question.LanguageFrom.ImageUrl);"></div>
+                <div class="forumLogo">
+                    <span class="arrow arrow-medium arrow-white"> 	&#129122;</span>
+
+                </div>
+                <div class="forumLogo" style="background-image:url(@Model.Question.LanguageTo.ImageUrl);"></div>
+                <span id="headingBtn">
+                    @Html.ActionLink("Wstecz", "Questions", "Forum", new { langFrom = " " }, new { @class = "btn btn-back", id = "headingBtn" })
+                </span>
+            </div>
+
+            <div class="col-md-12 mt-20">
+                <span class="postIndexTitle">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry?
+                </span>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+    <div class="row" id="postIndexContent">
+
+        @if (true @*Model.Question.AuthorId == Model.ActiveUserId*@)
+        {
+        <div class="col-md-12">
+            <button id="questionDeleteButton" class="btn btn-danger"> Usuń</button>
+
+            <button id="questionDeleteButton" class="btn btn-info"> 
+               @Html.ActionLink("Edytuj", "EditQuestion", "Forum", new { questionId = @Model.Question.Id, langFrom = @Model.Question.LanguageFrom.Abbreviation, @Model.Question.LanguageTo.Abbreviation}, new { style="color:white"})
+            </button>
+
+        </div>
+        }
+
+        <div class="col-md-3 postAuthorContainer">
+            <div class="postAuthorImage"></div>
+
+            @Html.ActionLink(Model.Question.AuthorName, "Details", "Profile", new { userId = Model.Question.AuthorId }, null)
+            <span class="postDate">
+                @Model.Question.DatePosted
+            </span>
+            @if (Model.IsAdmin)
+            {
+                <span class="isAdmin smaller"> Admin</span>
+            }
+
+        </div>
+
+        <div class="col-md-9 postContentContainer">
+            <div class="postContent">
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            </div>
+        </div>
+
+        <div class="postButtons col-md-12">
+            <span class="rateButtons">
+                @*<button class="btn btn-success ">
+                        <i class="material-icons">
+                            thumb_up
+                        </i>
+                    </button>
+
+                    <button class="btn btn-danger ">
+                        <i class="material-icons">
+                            thumb_down
+                        </i>
+                    </button>*@
+            </span>
+
+            <span class="replyButton">
+                <button class="btn btn-info">
+                    @Html.ActionLink("Dodaj tłumaczenie", "CreateAnswer", "Forum", new { questionId = @Model.Question.Id }, null)
+                </button>
+            </span>
+        </div>
+
+
+    </div>
+
+
+    <div class="row" id="replyDivider">
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            @*<div class="row">
+                    <span> @Html.ActionLink("Dodaj tłumaczenie", "Create", "Forum", new { questionId = Model.Question.Id , langFrom = Model.Question.LanguageFrom.Abbreviation, langTo = Model.Question.LanguageTo.Abbreviation}, new { @class = "btn btn-newReply" }) </span>
+                </div>*@
+        }
+    </div>
+
+    @if (Model.Answers.Any())
+    {
+        foreach (var ans in Model.Answers)
+        {
+            <div class="row replyContent">
+                @if (ans.AuthorId == Model.ActiveUserId)
+                {
+                    <div class="col-md-12">
+                        <button class="answerDeleteButton btn btn-danger" answer_id="@ans.Id"> Usuń</button>
+
+                        <button class="answerEditButton btn btn-info">
+                            @Html.ActionLink("Edytuj", "EditAnswer", "Forum", new { answerId = ans.Id }, new { @class = "" })
+
+                        </button>
+                    </div>
+                }
+                <div class="col-md-3 replyAuthorContainer">
+                    <div class="postAuthorImage"></div>
+
+
+                    @Html.ActionLink(ans.AuthorName, "Detail", "Profile", new { authorId = ans.AuthorId }, null)
+
+                    <span class="postDate">
+                        @ans.Created
+                    </span>
+
+                    @if (ans.AuthorIsAdmin)
+                    {
+                        <div class="isAdmin smaller"> Admin</div>
+                        <br />
+                    }
+
+                </div>
+
+                <div class="col-md-9 replyContentContainer">
+                    <div class="postContent">
+                        @Html.Raw(ans.Content)
+                    </div>
+                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="postButtons col-md-12">
+                        <span class="rateButtons">
+                            <button class="btn btn-vote" value="1" answer_id="@ans.Id">
+                                <i class="material-icons">
+                                    thumb_up
+                                </i>
+                            </button>
+                            <button class="btn btn-points" answer_id="@ans.Id" disabled>
+
+                                @ans.Points
+
+                            </button>
+                            <button class="btn btn-vote" value="-1" answer_id="@ans.Id">
+                                <i class="material-icons">
+                                    thumb_down
+                                </i>
+                            </button>
+                        </span>
+                    </div>
+                }
+            </div>
+
+        }
+    }
+
+    else
+    {
+        <div class="noPosts">
+            <h3> Nie ma jeszcze tłumaczeń do tego pytania.</h3>
+        </div>
+    }
+
+</div>
+
+
+<div class="confirmBox" id="confirmAnswerDeleteBox" answer_id="0">
+    <h2> Czy na pewno chcesz usunąć swoje tłumaczenie?</h2>
+    <a href="" class="deleteAnswerConfirmButton btn btn-danger">Tak </a>
+    <a class="hideConfirmBoxButton btn btn-default"> Nie</a>
+
+</div>
+
+<div class="confirmBox" id="confirmQuestionDeleteBox">
+    <h2> Czy na pewno chcesz usunąć swoje pytanie?</h2>
+    <button class="btn btn-danger deleteQuestionConfirmButton">
+        @Html.ActionLink("Tak", "DeleteQuestion", "Forum", new { questionId = @Model.Question.Id }, null)
+    </button>
+    <button class="btn btn-default hideConfirmBoxButton"> Nie</button>
+</div>
+
+@section scripts
+{
+
+    <script>
+        $(document).ready(function () {
+
+            $(".answerDeleteButton").click(function () {
+                var ans_id = $(this).attr("answer_id");
+                $('#confirmAnswerDeleteBox').show();
+                $('.confirmBox').attr("answer_id", ans_id);
+                $(".deleteAnswerConfirmButton").attr("href",'@Url.Action("DeleteAnswer", "Forum")?answerId=' + $('.confirmBox').attr('answer_id'))
+            });
+
+            $("#questionDeleteButton").click(function () {
+                $('#confirmQuestionDeleteBox').show();
+            });
+
+            $(".hideConfirmBoxButton").click(function () {
+                $('#confirmAnswerDeleteBox').hide();
+                $('#confirmQuestionDeleteBox').hide();
+            })
+
+            @*$(".deleteAnswerConfirmButton").click(function () {
+                $(this).attr("href",'@Url.Action("DeleteAnswer", "Forum")?answerId=' + $('.confirmBox').attr('answer_id'))
+            })*@
+         })
+
+
+
+            @*$(".btn-vote").click(function () {
+
+                 $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Vote", "Vote")',
+                    data: {
+                    value: $(this).val(), // < note use of 'this' here
+                    user_id: '@Model.ActiveUserId',
+                    answer_id: $(this).attr("answer_id").value
+                    //access_token: $("#access_token").val()
+                    },
+                    beforeSend: function (data) {
+
+                    console(data)
+                    },
+
+                    success: function (result) {
+
+                    $("#positiveVote").removeClass("btn-success");
+                    $("#negativeVote").removeClass("btn-danger");
+
+                    if ($(this).attr("id") == "positiveVote") {
+                    $(this).addClass("btn-success");
+                    }
+                    else if ($(this).attr("id") == "positiveVote") {
+                    $(this).addClass("btn-danger");
+                    }
+
+                    $(".btn-points").find("[answer_id='" + $(this).attr("answer_id") + "']").prop("value", result['points'])
+
+                    alert("Points" + result.Points);
+                    },
+                    error: function(result) {
+                    alert('error');
+                    }
+                    });
+
+                    });
+                    });*@
+
+    </script>
+}

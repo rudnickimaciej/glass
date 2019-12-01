@@ -1,0 +1,37 @@
+﻿@model Translate.ViewModels.Components.QuestionViewModel
+
+
+<tr>
+    <td>
+        <div class="forumLogo" style="background-image:url(@Model.LanguageFrom.ImageUrl);"></div>
+        <div class="forumLogo">
+            <span class="arrow arrow-medium arrow-black"> 	&#129122;</span>
+        </div>
+        <div class="forumLogo" style="background-image:url(@Model.LanguageTo.ImageUrl);"></div>
+        <div class="postTitle">
+            @Html.ActionLink(Model.Title, "Question", "Forum", new { questionId = Model.Id, langFrom = Model.LanguageFrom.Abbreviation, langTo = Model.LanguageTo.Abbreviation }, null);
+        </div>
+
+        <div class="postSubTitle">
+            @if (Model.AnswersCount == 1)
+            {
+                <span> @Model.AnswersCount Odpowiedź</span>
+            }
+
+            @if (Model.AnswersCount == 0)
+            {
+                <span> Nikt jeszcze nie odpowiedział</span>
+            }
+            else
+            {
+                <span> @Model.AnswersCount Odpowiedzi</span>
+            }
+
+            <span class="postUser">
+                @Html.ActionLink("Autor", "GetAuthor", new { })
+            </span>
+
+
+        </div>
+    </td>
+</tr>

@@ -1,0 +1,78 @@
+﻿@using Microsoft.AspNet.Identity
+@model Translate.ViewModels.Complex.SpamReportsListingViewModel
+
+
+
+    <div class="container body-content">
+        <div class="row sectionHeader">
+            <div class="sectionHeading noBorder">
+
+                @{ var count = Model.Reports.Count();}
+
+                @if (count == 1)
+                {
+                <span> @count Report spamu.</span>
+                }
+
+                @if (count== 0)
+                {
+                    <span> Brak zreportowanych spamów.</span>
+                }
+                else
+                {
+                    <span> @count reportów spamu.</span>
+                }
+            </div>
+
+        </div>
+        <div class="col-md-12">
+            @Html.DropDownList("spamReason", new SelectList(ViewBag.SpamReasons, "Id", "Content"), "Typ spamu", new { @class = "homeSearch", id = "", data_style = "" })
+
+        </div>
+
+        @if (Model.Reports.Any())
+        {
+
+
+            <div class="row frontPageContent">
+                <h3 id="latestPosts"></h3>
+                <table class="table table-hover" id="latestPostsTable">
+                    <tbody>
+                        @foreach (var report in Model.Reports)
+                        {
+                            <tr>
+                                <td style="    width: 200px">
+                                    <div class="forumLogo" style="background-image:url(@report.LanguageFrom.ImageUrl);"></div>
+                                    <div class="forumLogo">
+                                        <span class="arrow arrow-medium arrow-black"> 	&#129122;</span>
+
+                                    </div>
+                                    <div class="forumLogo" style="background-image:url(@report.LanguageTo.ImageUrl);"></div>
+
+                                </td>
+                                <td>
+                                    <div class="postTitle">
+                                        @Html.ActionLink(report.ReportedAnswer.Content, "Question", "Forum", new { questionId = report.QuestionId, langFrom = report.LanguageFrom.Abbreviation, langTo = report.LanguageTo.Abbreviation }, null);
+                                    </div>
+                                </td>
+                                <td>
+                                    @*<div class="postSubTitle">
+                                        <span class="postUser">
+                                            @Html.ActionLink("Autor", "GetAuthor", new { })
+                                        </span>
+
+                                    </div>*@
+                                </td>
+                                <td>
+                                      Przesłano @report.Created przez @Html.ActionLink(@report.ReportingUserName,"Details", "Profile",new {userName = @report.ReportingUserName},null)
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        }
+
+    </div>

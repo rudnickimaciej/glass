@@ -1,0 +1,39 @@
+﻿DO ZROBIENIA:
+
+
+
+####FUNKCJE PODSTAWOWE 
+ - Głosowanie na odpowiedź
+ - Question
+	- edycja - naprawić odświeżanie Widoku po edycji rekordu Question.
+ - Answer
+	- edycja
+	- usuwanie
+ - Profil
+
+ 	- dodać filtr do kontrolera Details, który będzie zamieniał userName np. user@wp.pl na user.
+	- dodać uzbierane punkty użytkownika
+	
+
+
+
+####FUNKCJE DODATKOWE
+ - System spamu 
+	- dodać opcję "Zgłoś jako spam". Okno z wyborem opcji Spam Reason i przyciskiem "Wyślij"
+	- Administator - w ustawieniach opcja "Spam"
+
+- Rejestracja
+	- poprawienie czcionki
+	- blokowanie przycisku rejestracji bez zaakceptowania regulaminu
+- Login
+	- poprawienie czcionki
+
+	
+- Profil użytkownika
+  - prosty system powiadomień a la poczta email. 
+		- automatyczna wiadomość po zarejestrowaniu
+		- wiadomość po skasowaniu odpowiedzi przez administratora (powód skasowania)
+		- wiadomość o odpowiedzi na pytanie
+  - moje pytania
+  - moje odpowiedzi
+  - zmień zdjęcie

@@ -1,0 +1,39 @@
+﻿@model Translate.ViewModels.Complex.HomeIndexViewModel
+
+
+<div class="container body-content">
+    <div class="row frontPageSplash">
+        <div class="col-md-6 frontPageLearn">
+            <div class="frontPageHeading"> Poznawaj, tłumacz, ucz się języków</div>
+            <p class="frontPageSubHeading"> W Translate coś tam coś tam coś tam</p>
+            <div>
+
+                @using (Html.BeginForm("Search", "Forum", FormMethod.Post))
+                {              
+                    @Html.TextBoxFor(m => m.SearchQuery, new { @class = "homeSearch", placeholder = "Szukaj..." })
+                }
+            </div>
+        </div>
+
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-12">
+            @Html.Partial("_FilterHeader")
+        </div>
+    </div>
+
+    <div class="row frontPageContent">
+        <h3 id="latestPosts"> Najnowsze pytania</h3>
+        <table class="table table-hover" id="latestPostsTable">
+            <tbody>
+                @foreach(var question in Model.LatestQuestions)
+                {
+                  @Html.Partial("_QuestionRecord",question)
+                }
+            </tbody>
+        </table> 
+
+    </div>
+
+</div>

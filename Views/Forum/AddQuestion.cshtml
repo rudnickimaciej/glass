@@ -1,0 +1,56 @@
+﻿
+@model Translate.ViewModels.Complex.AddQuestionViewModel
+
+
+
+<div class="container body-content">
+    <div class="row sectionHeader">
+        <div class="sectionHeading noBorder">
+            @*<div class="forumLogo" style="background-image: url(@Model.LanguageFrom); background-size:100%"></div>*@
+            <span id="headingBtn"><a asp-controller="Forum" asp-action="Topic" asp-route-id="" class="btn btn-back">Back toe</a></span>
+        </div>
+    </div>
+    @if (!Context.User.Identity.IsAuthenticated)
+    {
+        <div class="row">
+            <div id="forumIndexContent">
+                <div class="register">You must be a <a asp-controller="Account" asp-action="Register">registered member</a> to create a new post.</div>
+            </div>
+        </div>
+    }
+    @if (Context.User.Identity.IsAuthenticated)
+    {
+        <div class="row">
+            <div class="createPostSection">
+                <div class="authorBlock">
+                </div>
+
+                @using (Html.BeginForm("AddQuestion", "Forum", new {  },FormMethod.Post,null))
+                {
+                    @Html.AntiForgeryToken()
+                    
+                    <div class="form-group">
+                        @Html.DropDownList("LanguageFrom", new SelectList(ViewBag.Languages, "Abbreviation", "Name"), "Język", new { @class = "homeSearch", id = "langFromInput", data_style = "" })
+                        @Html.DropDownList("LanguageTo", new SelectList(ViewBag.Languages, "Abbreviation", "Name"), "Język", new { @class = "homeSearch", id = "langFromInput", data_style = "" })
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Title)
+                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Content)
+                        @Html.TextAreaFor(m => m.Content, new { @class = "form-control", rows = "20", placeholder = "Tutaj napisz swoje pytanie" })
+                        @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger" })
+                    </div>
+                    <button type="submit" id="registerBtn" class="btn btn-submitPost">Submit Post</button>
+
+                }
+
+            </div>
+        </div>
+    }
+</div>
+

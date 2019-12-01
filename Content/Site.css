@@ -1,0 +1,584 @@
+﻿body {
+    padding: 50px 0 20px 0;
+    background-color: #EEE;
+    background-image: url("/Content/images/background/bg-01.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.navbar {
+    box-shadow: 0 5px 4px -6px #000;
+}
+
+.navLogo {
+    background-image: url("/Content/images/logos/logo-01.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-right: 16px;
+    width: 150px;
+    background-position: center;
+    margin-right: 14px;
+}
+
+.navbar li {
+    font-weight: bold;
+}
+
+
+.sectionHeader {
+    background-color: #2b2114;
+    padding: 8px 0 0px 24px;
+}
+
+.sectionHeading {
+    color: white;
+    font-size: 1.3em;
+    font-family: 'Roboto';
+    padding: 16px 0 16px 0;
+    /*border-bottom: 1px solid #335;*/
+    margin-bottom: 12px;
+}
+
+.postHeading {
+    color: white;
+    font-size: 1.3em;
+    font-family: 'Roboto';
+    padding: 16px 10px 16px 10px;
+}
+
+
+
+.sectionInfo {
+    height: 400px;
+    background-color: white;
+}
+
+/* Front page heading */
+.frontPageSplash {
+    text-align: center;
+    background-image: url("/Content/images/background/bg-04.jpg");
+    background-repeat: no-repeat;
+    height: auto;
+    padding: 20px;
+}
+
+.frontPageLearn {
+    text-align: center;
+    opacity: 1;
+    font-family: 'Roboto';
+    color: black;
+}
+
+.frontPageHeading {
+    text-align: center;
+    font-size: 3.2em;
+}
+
+.frontPageSubHeading {
+    font-weight: bold;
+    font-size: 2em;
+}
+/* Front page content */
+
+.frontPageContent {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 16px;
+    padding-bottom:0px;
+}
+
+#latestPosts {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin: 4px 0 16px 0;
+}
+
+/*Post page*/
+
+.postTitle {
+    font-family: 'Roboto';
+    font-weight: bold;
+}
+
+.postSubTitle {
+    color: #888;
+    font-family: 'Roboto Mono';
+    font-size: 0.8em;
+}
+
+.postData {
+    display: inline-block;
+}
+
+.postDate {
+    color: #888;
+    font-family: 'Roboto Mono';
+    font-size: 0.8em;
+}
+
+.postLogo {
+    display: inline-block;
+    border-radius: 3px;
+    margin-right: 20px;
+    height: 40px;
+    width: 40px;
+    background-color: #ddd;
+}
+
+.postAuthorImage {
+    height: 80px;
+    width: 80px;
+    background: 100%;
+    background-image: url('../Content/images/users/user_0.png');
+    background-size: cover;
+}
+
+.postAuthorContainer {
+    padding: 12px;
+    color: #444;
+    font-family: 'Roboto';
+    width: 190px;
+}
+
+.postIndexTitle {
+    font-size: 2.4rem;
+}
+
+#postContentContainer {
+    font-family: 'Roboto';
+    color: #222;
+    padding: 22px;
+    border-left: 1px solid #ddd;
+}
+
+.postAuthorRating {
+    font-size: 0.9rem;
+    color: #159;
+    font-family: 'Roboto Mono';
+}
+
+
+#postIndexContent {
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px rgba(0,0,0,0.3);
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.postHeader {
+    background-color: #212121;
+    padding: 8px 0px 24px;
+}
+
+#headingBtn {
+    /*float:right;
+    margin-right:20px;*/
+}
+
+/* Custom Button Stylings*/
+
+.btn-back {
+    background-color: #555;
+    color: #fff !important;
+    transition: ease-in 0.1s;
+    border-radius: 0px !important;
+}
+
+    .btn-back:hover {
+        transition: ease-in 0.1s;
+        background-color: #1E88E5 !important;
+    }
+
+.btn.newReply {
+    background-color: #5C6BC0 !important;
+    color: #fff !important;
+    transition: ease-in 0.1s;
+    border-radius: 0px !important;
+}
+
+.btn-newReply:hover {
+    background-color: #9FA8DA !important;
+    transition: ease-in 0.1s;
+}
+
+
+.filterDropdown {
+    float: left;
+    font-size: 2rem;
+    color: black !important;
+    transition: ease-in 0.1s;
+    border-radius: 0px !important;
+}
+
+.btn-newPost {
+    color:white !important;
+    float: right;
+    font-size: 2rem;
+    transition: ease-in 0.1s;
+    border-radius: 0px !important;
+}
+
+    .btn-newPost:hover {
+
+    }
+
+    .btn-newPost a {
+        color: white;
+    }
+
+.btn-submitPost {
+    background-color: #00695C !important;
+    color: #fff !important;
+    transition: ease-in 0.1s;
+    border-radius: 0px !important;
+}
+
+    .btn-submitPost:hover {
+        transition: ease-in 0.1s;
+        background-color: #00897B !important;
+        color: #fff !important;
+    }
+/* Forum index */
+#forumIndexTable td {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#forumIndexTable tr:hover {
+    background-color: rgba(0, 116, 238, 1);
+}
+
+.forumData {
+    display: inline-block;
+}
+
+.forumTitle {
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.forumSubTitle {
+    color: #888;
+    font-family: 'Roboto Mono';
+    font-size: 0.8em;
+}
+
+.forumDescription {
+    color: #555;
+    font-family: 'Roboto';
+}
+
+.tableCenter {
+    text-align: center;
+}
+
+.tableLeft {
+    text-align: left;
+}
+
+.inputCustom {
+    height: 1.8em;
+    font-size: 2.1em;
+    font-family: 'Roboto Mono';
+    font-weight: bold;
+    transition: ease-in 0.2s;
+}
+
+.forumLogo {
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+    height: 40px;
+    width: 40px;
+    background-size: 100%
+}
+
+.langArrow {
+
+}
+
+.langArrow {
+    height: 40px !important;
+    width: 30px !important;
+    background-size: 100%
+}
+.langArrow-black {
+    background-image: url('~/Content/images/logos/arrow_black.png');
+}
+.langArrow-white {
+    background-image: url('~/Content/images/logos/arrow_white.png');
+    background-image: url('images/logos/arrow_white.png');
+}
+
+.arrow
+{
+    content: "\203A";
+    font-size:2rem;
+}
+.arrow-small
+{
+    font-size:2rem;
+}
+.arrow-medium
+{
+    font-size:4rem;
+}
+.arrow-large
+{
+    font-size:5rem;
+}
+
+.arrow-black
+{
+    color:black;
+}
+.arrow-white
+{
+    color:white;
+}
+
+.forumPostCount {
+    color: #888;
+    font-family: 'Roboto Mono';
+    font-size: 0.9em;
+}
+
+.forumMemberCount {
+    color: #888;
+    font-family: 'Roboto Mono';
+    font-size: 0.9em;
+}
+
+#forumIndexContent {
+    padding-bottom: 60px;
+    background-color: white;
+}
+
+.noPosts {
+    text-align: center;
+    padding-top: 30px;
+    font-family: 'Roboto Mono';
+}
+
+/*Reply*/
+
+.replyContent {
+    background-color: floralwhite;
+    /*box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px rgba(0,0,0,0.3);*/
+    border-bottom: 1px solid #444;
+    padding: 20px;
+}
+
+.replyAuthorContainer {
+    padding: 12px;
+    color: #444;
+    font-family: 'Roboto';
+    width: 190px;
+}
+
+.postButtons {
+    margin-top: 5px;
+}
+
+.rateButtons {
+    float: left;
+}
+
+.replyButton {
+    float: right;
+}
+
+    .replyButton a {
+        color: white;
+    }
+
+#btn-profile {
+    margin-top: 10px;
+}
+
+.questionContentReplyHeader {
+    background-color: #e0e0e0;
+    padding: 8px 0 0px 24px;
+}
+
+
+/* Confirmation Box*/
+.confirmBox {
+    display: none;
+    background-color: whitesmoke;
+    width: 350px;
+    height: 180px;
+    border: 1px solid Black;
+    text-align: left;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -180px;
+    margin-top: -70px;
+    text-align: center;
+}
+
+.confirmAnswerDelete {
+}
+
+.answerDeleteButton {
+    float: right;
+}
+
+.answerEditButton {
+    float: right;
+    margin-right: 5px;
+}
+
+    .answerEditButton a {
+        color: white;
+    }
+
+#questionDeleteButton {
+    float: right;
+}
+
+/*Vote*/
+.btn-vote {
+    color: #fff;
+    background-color: #cccccc;
+}
+
+.btn-vote-active {
+}
+/*User Profile*/
+.userProfile {
+    padding: 32px 0 64px 24px;
+    background-color: #fff;
+}
+
+#userProfileImage {
+    padding: 32px 0 64px 24px;
+    height: 100px;
+    width: 100px;
+    background: 100%;
+    background-image: url('images/users/user_2.png');
+    background-size: cover;
+}
+
+
+#userEmailLabel, #userBioLabel, #userCreatedLabel, #userRating, #userActiveLabel {
+    display: block;
+    color: #444;
+    font-family: 'Roboto';
+    padding-top: 3px;
+}
+
+#userName {
+    display: block;
+    color: #2569d5;
+    font-family: 'Roboto';
+    font-size: 1.7rem;
+}
+
+/*Post*/
+.createPostSection {
+    background-color: #fff;
+    padding: 24px;
+}
+
+/*wrapping element*/
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*carousel*/
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.sectionDescription {
+    color: #EEE;
+}
+
+.frontPageTopContainer {
+    padding: 40px 80px 42px 40px;
+    border: 1px solid #999;
+    background-color: #2569D5;
+    font-family: 'Roboto';
+}
+
+.homeSearch {
+    width: 100%;
+    margin-top: 8px;
+    background: #adadadbf;
+    padding: 8px;
+    border: 0px;
+    height: 1.8em;
+    font-size: 2.1em;
+    font-family: 'Roboto Mono';
+    font-weight: bold;
+    transition: ease-in 0.2s;
+}
+
+    .homeSearch:focus {
+        border: none !important;
+        outline: none !important;
+        transition: ease-in 0.2s;
+        color: white;
+        background-color: rgba(0,0,0,0.7);
+        box-shadow: 0 5px 4px -6px #000;
+    }
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+}
+
+
+.mt-20 {
+    margin-top: 20px;
+}
