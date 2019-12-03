@@ -22,8 +22,8 @@
                     <div class="form-group">
                         <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
 
-                        @Html.TextBoxFor(m => m.Name, new { id = "name", placeholder = "Twoje imię", type = "text" })
-                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(m => m.UserName, new { id = "name", placeholder = "Nazwa użytkownika", type = "text" })
+                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
 
                     </div>
 

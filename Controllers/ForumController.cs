@@ -196,7 +196,7 @@ namespace Translate.Controllers
             var question = answer.Question;
 
             var model = _builder.BuilEditAnswerViewModel(answer, user);
-            model.ReplyContent = answer.Content; 
+            //model.ReplyContent = answer.Content; 
 
             return View(model);
         }
@@ -205,7 +205,7 @@ namespace Translate.Controllers
         public ActionResult EditAnswer(EditAnswerViewModel model)
         {
             _forumService.EditAnswer(model.AnswerId, model.ReplyContent);
-            return RedirectToAction("Question", new { langFrom = model.LanguageFrom.Abbreviation, langTo = model.LanguageTo.Abbreviation, questionId = model.QuestionId });
+            return RedirectToAction("Question", new { langFrom = model.LanguageFromAbbreviation, langTo = model.LanguageToAbbreviation, questionId = model.QuestionId });
         }
 
         public ActionResult DeleteAnswer(int answerId)

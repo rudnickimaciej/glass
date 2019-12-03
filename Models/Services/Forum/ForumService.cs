@@ -80,15 +80,18 @@ namespace Translate.Models.Services
             questionToEdit.Title = editQuestion.Title;
             _context.SaveChanges();
 
-            _context.Entry(questionToEdit).Reload();
+            //_context.Entry(questionToEdit).Reload();
             return questionToEdit;
         }
 
         public void DeleteQuestion(int questionId)
         {
-            var answers =_context.Answers.Where(a => a.Question.Id == questionId);
-            _context.Answers.RemoveRange(answers);
-            _context.Questions.Remove(_context.Questions.Where(q=>q.Id==questionId).FirstOrDefault());
+            IList<Answer> answers =_context.Answers.Where(a => a.Question.Id == questionId).ToList();
+            foreach (Answer a in answers)
+                DeleteAnswer(a.Id);
+
+            var questionToDelete = _context.Questions.Where(q => q.Id == questionId).FirstOrDefault();
+            _context.Questions.Remove(questionToDelete);
             _context.SaveChanges();
         }
 
@@ -105,14 +108,14 @@ namespace Translate.Models.Services
         }
 
 
-        void IForum.EditAnswer(int answerId, string newContent)
+        public void EditAnswer(int answerId, string newContent)
         {
             _context.Answers.Where(a => a.Id == answerId).FirstOrDefault().
                 Content = newContent;
             _context.SaveChanges();
         }
 
-        void IForum.DeleteAnswer(int answerId)
+        public void DeleteAnswer(int answerId)
         {
             var reports = _context.SpamReports.Where(s => s.ReportedAnswer.Id == answerId);
             _context.SpamReports.RemoveRange(reports);
@@ -146,7 +149,9 @@ namespace Translate.Models.Services
                
         }
 
- 
+
+
+
         #endregion
 
     }

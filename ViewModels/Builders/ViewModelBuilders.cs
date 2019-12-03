@@ -79,8 +79,14 @@ namespace Translate.ViewModels.Builders
                 AnswerId = answer.Id,
                 ReplyContent = answer.Content,
                 Created = answer.Created,
-                LanguageFrom = BuildLanguage(answer.Question.LanguageFrom),
-                LanguageTo = BuildLanguage(answer.Question.LanguageTo),
+                LanguageFromId =answer.Question.LanguageFrom.Id,
+                LanguageFromAbbreviation = answer.Question.LanguageFrom.Abbreviation,
+                LanguageFromImageUrl = answer.Question.LanguageFrom.ImageUrl,
+
+                LanguageToId = answer.Question.LanguageTo.Id,
+                LanguageToAbbreviation = answer.Question.LanguageTo.Abbreviation,
+                LanguageToImageUrl = answer.Question.LanguageTo.ImageUrl,
+
                 QuestionContent = answer.Question.Content,
                 QuestionTitle = answer.Question.Title
             }; 

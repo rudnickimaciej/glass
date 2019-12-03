@@ -11,10 +11,6 @@
  - Szukanie pytań na podstawie wyszukiwania
    - podzielenie ciągu wyrazów na pojedyńcze wyrazy i przeszukiwanie bazy pytań (UŁATWIENIE: tylko tytułów pytań)
  - Głosowanie na odpowiedź asynchronicznie
- - Question
-	- edycja - naprawić odświeżanie Widoku po edycji rekordu Question.
- - Answer
-	- edycja
  - Profil
 
  	- dodać filtr do kontrolera Details, który będzie zamieniał userName np. user@wp.pl na user.

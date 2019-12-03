@@ -3,8 +3,8 @@
 <div class="container body-content">
     <div class="row sectionHeader">
         <div class="sectionHeading">
-            <div class="forumLogo" style="background-image: url(@Model.LanguageFrom.ImageUrl); background-size:100%"></div>
-            <div class="forumLogo" style="background-image: url(@Model.LanguageTo.ImageUrl); background-size:100%"></div>
+            <div class="forumLogo" style="background-image: url(@Model.LanguageFromImageUrl); background-size:100%"></div>
+            <div class="forumLogo" style="background-image: url(@Model.LanguageToImageUrl); background-size:100%"></div>
 
             <span id="headingBtn"><a asp-controller="Forum" asp-action="Topic" asp-route-id="" class="btn btn-back">Powrót </a></span>
         </div>
@@ -36,10 +36,11 @@
 
                 </div>
                 <button type="submit" id="registerBtn" class="btn btn-submitPost">Zapisz zmiany</button>
-                @Html.HiddenFor(m => m.LanguageFrom);
-                @Html.HiddenFor(m => m.LanguageTo);
+                @Html.HiddenFor(m => m.LanguageFromAbbreviation);
+                @Html.HiddenFor(m => m.LanguageToAbbreviation);
                 @Html.HiddenFor(m => m.Created);
-=               @Html.HiddenFor(m => m.AnswerId);
+                @Html.HiddenFor(m => m.AnswerId);
+                @Html.HiddenFor(m => m.QuestionId);
 
             }
 

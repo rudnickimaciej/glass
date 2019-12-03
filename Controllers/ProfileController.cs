@@ -20,7 +20,7 @@ namespace Translate.Controllers
 
 
         //[Authorize(Roles="User")]
-        // GET: Profile
+        // GET: Profiles
         public ActionResult Details(string userName)
         {
             var user = _userService.GetByUserName(userName);

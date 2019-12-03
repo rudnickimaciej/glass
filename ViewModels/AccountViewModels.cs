@@ -49,9 +49,9 @@ namespace Translate.ViewModels
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "UserName")]
         [EmailAddress]
-        public string Email { get; set; }
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,9 +64,9 @@ namespace Translate.ViewModels
 
     public class RegisterViewModel
     {
-        [Required(ErrorMessage ="Proszę podać swoje imię.")]
-        [Display(Name="Imię")]
-        public string Name { get; set; }
+        [Required(ErrorMessage ="Proszę podać nazwę użytkownika.")]
+        [Display(Name="Nazwa użytkownika")]
+        public string UserName { get; set; }
 
         [Required]
         [EmailAddress]

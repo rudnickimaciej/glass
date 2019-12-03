@@ -50,7 +50,7 @@ namespace Translate
 
             routes.MapRoute(
            name: "Profile",
-           url: "profile/{userName}",
+           url: "profiles/{userName}",
            defaults: new { controller = "Profile", action = "Details", userName = UrlParameter.Optional }
           );
 
