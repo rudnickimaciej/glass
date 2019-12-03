@@ -277,6 +277,7 @@
     <Compile Include="ViewModels\Builders\UserHelper.cs" />
     <Compile Include="ViewModels\Builders\ViewModelBuilders.cs" />
     <Compile Include="ViewModels\Complex\AddQuestionViewModel.cs" />
+    <Compile Include="ViewModels\Complex\EditAnswerViewModel.cs" />
     <Compile Include="ViewModels\Complex\EditQuestionViewModel.cs" />
     <Compile Include="ViewModels\Complex\HomeIndexViewModel.cs" />
     <Compile Include="ViewModels\Complex\SpamReportsListingViewModel.cs" />
@@ -336,7 +337,10 @@
     <Content Include="Content\images\logos\arrow.svg" />
     <Content Include="Content\images\logos\arrow_black.png" />
     <Content Include="Content\images\logos\arrow_white.png" />
+    <Content Include="Content\images\logos\icon.png" />
     <Content Include="Content\images\logos\logo-01.png" />
+    <Content Include="Content\images\logos\icon-tab.jpg" />
+    <Content Include="Content\images\logos\logo.png" />
     <Content Include="Content\images\users\user_0.png" />
     <Content Include="Content\images\users\user_1.png" />
     <Content Include="Content\images\users\user_2.png" />

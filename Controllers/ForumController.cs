@@ -195,16 +195,16 @@ namespace Translate.Controllers
 
             var question = answer.Question;
 
-            var model = _builder.BuildReplyViewModel(question, user);
+            var model = _builder.BuilEditAnswerViewModel(answer, user);
             model.ReplyContent = answer.Content; 
 
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult EditAnswer(ReplyViewModel model)
+        public ActionResult EditAnswer(EditAnswerViewModel model)
         {
-            _forumService.EditAnswer(model.Id, model.ReplyContent);
+            _forumService.EditAnswer(model.AnswerId, model.ReplyContent);
             return RedirectToAction("Question", new { langFrom = model.LanguageFrom.Abbreviation, langTo = model.LanguageTo.Abbreviation, questionId = model.QuestionId });
         }
 

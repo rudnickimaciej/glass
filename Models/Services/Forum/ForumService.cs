@@ -114,7 +114,15 @@ namespace Translate.Models.Services
 
         void IForum.DeleteAnswer(int answerId)
         {
-            _context.Answers.Remove(_context.Answers.Where(a => a.Id == answerId).FirstOrDefault());
+            var reports = _context.SpamReports.Where(s => s.ReportedAnswer.Id == answerId);
+            _context.SpamReports.RemoveRange(reports);
+            var votes = _context.Votes.Where(v => v.Answer.Id == answerId);
+            _context.Votes.RemoveRange(votes);
+            var answer = _context.Answers.Where(a => a.Id == answerId).FirstOrDefault();
+            _context.Answers.Remove(answer);
+
+            _context.SaveChanges();
+
         }
 
 

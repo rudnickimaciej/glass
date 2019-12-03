@@ -49,11 +49,9 @@
         @if (true @*Model.Question.AuthorId == Model.ActiveUserId*@)
         {
         <div class="col-md-12">
-            <button id="questionDeleteButton" class="btn btn-danger"> Usuń</button>
+            <a id="questionDeleteButton"> Usuń</a>
 
-            <button id="questionDeleteButton" class="btn btn-info"> 
-               @Html.ActionLink("Edytuj", "EditQuestion", "Forum", new { questionId = @Model.Question.Id, langFrom = @Model.Question.LanguageFrom.Abbreviation, @Model.Question.LanguageTo.Abbreviation}, new { style="color:white"})
-            </button>
+            @Html.ActionLink("Edytuj", "EditQuestion", "Forum", new { questionId = @Model.Question.Id, langFrom = @Model.Question.LanguageFrom.Abbreviation, @Model.Question.LanguageTo.Abbreviation }, new { id="questionEditButton"})
 
         </div>
         }
@@ -119,16 +117,13 @@
         foreach (var ans in Model.Answers)
         {
             <div class="row replyContent">
-                @if (ans.AuthorId == Model.ActiveUserId)
+                @if (true @*ans.AuthorId == Model.ActiveUserId*@)
                 {
-                    <div class="col-md-12">
-                        <button class="answerDeleteButton btn btn-danger" answer_id="@ans.Id"> Usuń</button>
+                <div class="col-md-12">
+                    <a class="answerDeleteButton" answer_id="@ans.Id"> Usuń</a>
+                    @Html.ActionLink("Edytuj", "EditAnswer", "Forum", new { answerId = ans.Id }, new { @class = "answerEditButton" })
 
-                        <button class="answerEditButton btn btn-info">
-                            @Html.ActionLink("Edytuj", "EditAnswer", "Forum", new { answerId = ans.Id }, new { @class = "" })
-
-                        </button>
-                    </div>
+                </div>
                 }
                 <div class="col-md-3 replyAuthorContainer">
                     <div class="postAuthorImage"></div>

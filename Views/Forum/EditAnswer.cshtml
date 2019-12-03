@@ -1,4 +1,4 @@
-﻿@model Translate.ViewModels.Components.ReplyViewModel
+﻿@model Translate.ViewModels.Complex.EditAnswerViewModel
 
 <div class="container body-content">
     <div class="row sectionHeader">
@@ -37,11 +37,9 @@
                 </div>
                 <button type="submit" id="registerBtn" class="btn btn-submitPost">Zapisz zmiany</button>
                 @Html.HiddenFor(m => m.LanguageFrom);
-                Html.HiddenFor(m => m.LanguageTo);
+                @Html.HiddenFor(m => m.LanguageTo);
                 @Html.HiddenFor(m => m.Created);
-                @Html.HiddenFor(m => m.QuestionId);
-                @Html.HiddenFor(m => m.AuthorId);
-
+=               @Html.HiddenFor(m => m.AnswerId);
 
             }
 

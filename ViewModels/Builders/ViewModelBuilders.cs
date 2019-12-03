@@ -3,6 +3,7 @@ using Translate.Models;
 using Translate.ViewModels.Components;
 using Microsoft.AspNet.Identity;
 using System;
+using Translate.ViewModels.Complex;
 
 namespace Translate.ViewModels.Builders
 {
@@ -69,6 +70,20 @@ namespace Translate.ViewModels.Builders
                 LanguageFrom = BuildLanguage(question.LanguageFrom),
                 LanguageTo = BuildLanguage(question.LanguageTo)
             };
+        }
+        public EditAnswerViewModel BuilEditAnswerViewModel(Answer answer ,ApplicationUser user)
+        {
+            return new EditAnswerViewModel()
+            {
+                QuestionId = answer.Question.Id,
+                AnswerId = answer.Id,
+                ReplyContent = answer.Content,
+                Created = answer.Created,
+                LanguageFrom = BuildLanguage(answer.Question.LanguageFrom),
+                LanguageTo = BuildLanguage(answer.Question.LanguageTo),
+                QuestionContent = answer.Question.Content,
+                QuestionTitle = answer.Question.Title
+            }; 
         }
 
     }

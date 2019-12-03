@@ -13,7 +13,7 @@
 }
 
 .navLogo {
-    background-image: url("/Content/images/logos/logo-01.png");
+    background-image: url("/Content/images/logos/logo.png");
     background-size: 100%;
     background-repeat: no-repeat;
     padding-right: 16px;
@@ -424,12 +424,14 @@
 }
 
 .answerDeleteButton {
+    cursor: pointer;
     float: right;
+    color: red;
 }
 
 .answerEditButton {
     float: right;
-    margin-right: 5px;
+    margin-right: 15px;
 }
 
     .answerEditButton a {
@@ -438,8 +440,14 @@
 
 #questionDeleteButton {
     float: right;
+    color:red;
+    cursor:pointer;
 }
-
+#questionEditButton
+{
+    float:right;
+    margin-right:15px;
+}
 /*Vote*/
 .btn-vote {
     color: #fff;
