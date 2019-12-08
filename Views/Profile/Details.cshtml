@@ -11,7 +11,7 @@
     <div class="container body-content">
         <div class="row sectionHeader">
             <div class="sectionHeading noBorder">
-                User Profile
+                @Model.Username
             </div>
             @if (User.IsInRole("Admin"))
             {
@@ -21,46 +21,73 @@
                     </div>
                 </form>
             }
-        </div>
+            </div>
             <div class="row userProfile">
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <div id="userProfileImage" ></div>
                     @*@if (Context.User.Identity.Name == Model.Username)
                     {*@
                         <form method="post" enctype="multipart/form-data" asp-controller="Profile" asp-action="UploadProfileImage">
                             <div id="upload">
                                 <label class="btn btn-info btn-file">
-                                    Browse <input type="file" name="file" style="display: none;">
+                                    Przeglądaj  <input type="file" name="file" style="display: none;">
                                 </label>
                             </div>
-                            <button type="submit" id="btn-profile" class="btn btn-success">Submit</button>
+                            <button type="submit" id="btn-profile" disabled class="btn btn-success">Zmień zdjęcie</button>
                         </form>
                     @*}*@
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <span id="userName">@Model.Username</span>
                     @if (@Model.IsAdmin)
                     {
                         <span class="isAdmin">Admin</span>
                     }
-                    <span id="userRating">Current Rating: @Model.UserRating</span>
+                    <span id="userRating">Punkty tłumaczeń: @Model.UserPoints</span>
                     <span id="userEmailLabel">Email: @Model.Email</span>
-                    <span id="userCreatedLabel">Member Since: @Model.MemberSince</span>
+                    <span id="userCreatedLabel">Dołączył @Model.MemberSince</span>
                     <span id="userActiveLabel">
-                        Status:
                         @if (!@Model.IsActive)
                         {
-                            <span class="inactiveUser">Inactive</span>
+                            <span class="inactiveUser">Nieaktywny</span>
                         }
                         else
                         {
-                            <span>Active</span>
+                            <span class="activeUser">Aktywny</span>
                         }
                     </span>
+                    @if( true @*Model.UserId == User.Identity.GetUserId()*@)
+                    {
+                    <span>
+                        @Html.ActionLink("Zmień hasło", "ChangePassword", "Manage")
+                    </span>
+
+                    }
+
                 </div>
-                <div class="col-md-4 profileDescription">
-                    <span> @Model.Description</span>
+                <div class="col-md-8 profileDescription">
+                    <span>
+                        @Model.Description Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown printer took
+                        a galley of type and scrambled it to make a type specimen book. It has
+                        survived not only five centuries, but also the leap into electronic typesetting,
+                        remaining essentially unchanged. It was popularised in the 1960s with the release of
+                        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                        software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </span>
+                    @if (true@*Model.UserId == User.Identity.GetUserId()*@)
+                    {
+                        <p>
+                            @Html.ActionLink("Zmień opis", "ChangePassword")
+                        </p>
+                    }
+
                 </div>
             </div>
 
     </div>
+
+<div>
+    <h1 style="color:green"> @ViewBag.StatusMessage</h1>
+</div>

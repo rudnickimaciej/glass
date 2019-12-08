@@ -49,13 +49,13 @@ namespace Translate.ViewModels
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "UserName")]
-        [EmailAddress]
+        [Display(Name = "Nazwa użytkownika")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Proszę podać hasło")]
         [DataType(DataType.Password)]
         [Display(Name = "Hasło")]
+        
         public string Password { get; set; }
 
         [Display(Name = "Pamiętaj mnie")]
@@ -74,7 +74,7 @@ namespace Translate.ViewModels
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Hasło musi składać się z conajmniej 6 znaków.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Hasło")]
         public string Password { get; set; }

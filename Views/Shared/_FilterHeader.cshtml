@@ -1,6 +1,8 @@
 ﻿
 @using (Html.BeginForm("Questions", "Forum", FormMethod.Get, new { }))
 {
+
+    @Html.TextBox("SearchQuery","", new { @class = "homeSearch", placeholder = "Szukaj..." })
     <table class="table" id="forumSearchDropdown">
 
         <tbody>

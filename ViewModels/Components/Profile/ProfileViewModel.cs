@@ -12,7 +12,7 @@ namespace Translate.ViewModels.Components
         public string Email { get; set; }
         public string Username { get; set; }
         public string Description { get; set; }
-        public int UserRating { get; set; }
+        public int UserPoints { get; set; }
         public string ProfileImageUrl { get; set; }
         public bool IsAdmin { get; set; }
         public bool IsActive { get; set; }

@@ -241,7 +241,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ForumController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SpamController.cs" />
@@ -341,6 +340,8 @@
     <Content Include="Content\images\logos\logo-01.png" />
     <Content Include="Content\images\logos\icon-tab.jpg" />
     <Content Include="Content\images\logos\logo.png" />
+    <Content Include="Content\images\logos\logo3.png" />
+    <Content Include="Content\images\logos\logo4.png" />
     <Content Include="Content\images\users\user_0.png" />
     <Content Include="Content\images\users\user_1.png" />
     <Content Include="Content\images\users\user_2.png" />
@@ -434,6 +435,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.timeago.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />

@@ -10,6 +10,7 @@ namespace Translate.Models.Services
     public interface IVoteService
     {
         int Vote(Vote vote);
+        int GetUserPoints(string userId);
 
     }
 }

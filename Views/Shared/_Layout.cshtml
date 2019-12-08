@@ -11,20 +11,21 @@
     @Scripts.Render("~/bundles/modernizr")
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+        <div class="container" style="padding:5px">
             <div class="navbar-header">
-                @Html.ActionLink(" ", "Index", "Home", null, new { @class = "navbar-brand navLogo" })
+                @Html.ActionLink(" ", "Questions", "Forum", null, new { @class = "navbar-brand navLogo" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*<li>@Html.ActionLink("Fora", "Index", "Home")</li>*@
 
 
-                    
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -32,11 +33,30 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
     </div>
+    <footer class="mainfooter" role="contentinfo">
+        <div class="footer-middle">
+            <div class="container">
+                <div class="row" style="padding-bottom:10px">
+                
+                    <div class="col-md-12">
+                        <span>Kod dostępny na</span>
+                        <ul class="social-network social-circle">
+                            <li><a href="https://github.com/rudnickimaciej/Translate" class="icoFacebook" title="Github"><i class="fa fa-github fa-2x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 copy">
+                        <p class="text-center">@*&copy; Copyright 2019 - Company Name.  All rights reserved.*@</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>

@@ -27,18 +27,24 @@
                     <div class="form-group">
                         <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
                         @Html.TextBoxFor(m => m.UserName, new { @class = "", id = "username", placeholder = "Nazwa użytkownika" })
+                    </div>
+                    <div class="form-group">
                         @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group">
                         <label for="password"><i class="zmdi zmdi-lock"></i></label>
                         @Html.PasswordFor(m => m.Password, new { @class = "", id = "password", placeholder = "Hasło" })
+                    </div>
+
+                    <div class="form-group">
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
-                    <div class="form-group">
+
+                    @*<div class="form-group">
                         @Html.CheckBoxFor(m => m.RememberMe, new { @class = "agree-term" })
                         <label for="remember-me" class="label-agree-term"><span><span></span></span>Zapamiętaj mnie</label>
-                    </div>
+                    </div>*@
                     <div class="form-group form-button">
                         <input type="submit" name="signin" id="signin" class="form-submit" value="Zaloguj" />
                     </div>
@@ -46,14 +52,14 @@
                 }
 
 
-                <div class="social-login">
+                @*<div class="social-login">
                     <span class="social-label">Lub zaloguj się z</span>
                     <ul class="socials">
                         <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
                         <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
                         <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
                     </ul>
-                </div>
+                </div>*@
             </div>
         </div>
     </div>

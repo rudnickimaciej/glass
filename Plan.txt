@@ -3,21 +3,13 @@
 
 
 ####FUNKCJE PODSTAWOWE 
- - UI 
-   - zmiana logo
-   - dodanie ikony strony 
-   - dodanie logo githuba z przekierowaniem do repozytorium projektu 
-   - zmiana czcionek strony logowania i rejestracji
- - Szukanie pytań na podstawie wyszukiwania
-   - podzielenie ciągu wyrazów na pojedyńcze wyrazy i przeszukiwanie bazy pytań (UŁATWIENIE: tylko tytułów pytań)
- - Głosowanie na odpowiedź asynchronicznie
- - Profil
+ 
+ - Głosowanie na odpowiedź asynchronicznie - spróbować implementacji za pomocą SignalR.
 
- 	- dodać filtr do kontrolera Details, który będzie zamieniał userName np. user@wp.pl na user.
-	- dodać uzbierane punkty użytkownika
+ - Ogarnąć TimeAgo 
+  - Dodawanie pytań  i odpowiedzi - coś się psuje, debugować z włączoną bazą.
 
-
-	
+ - Zmienic Username na scecyficzny
 
 
 
@@ -27,10 +19,8 @@
 	- Administator - w ustawieniach opcja "Spam"
 
 - Rejestracja
-	- poprawienie czcionki
 	- blokowanie przycisku rejestracji bez zaakceptowania regulaminu
-- Login
-	- poprawienie czcionki
+
 
 	
 - Profil użytkownika
@@ -41,3 +31,8 @@
   - moje pytania
   - moje odpowiedzi
   - zmień zdjęcie
+  - zmień opis
+ 
+ - Konto
+	- resetowanie hasła
+	

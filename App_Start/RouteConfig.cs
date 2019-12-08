@@ -63,7 +63,7 @@ namespace Translate
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Forum", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Forum", action = "Questions", id = UrlParameter.Optional }
             );
 
         }

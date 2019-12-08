@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using Translate.Models;
 using Translate.Models.Services;
 using Translate.ViewModels.Components;
+using static Translate.Controllers.ManageController;
 
 namespace Translate.Controllers
 {
@@ -17,12 +18,16 @@ namespace Translate.Controllers
     {
 
         private readonly IUpload _uploadService = new UploadService();
+        protected readonly IVoteService _voteService = new VoteService();
 
 
         //[Authorize(Roles="User")]
         // GET: Profiles
-        public ActionResult Details(string userName)
+        public ActionResult Details(string userName, ManageMessageId? message)
         {
+            ViewBag.StatusMessage =
+                message == ManageMessageId.ChangePasswordSuccess ? "Twoje hasło zostało zmienione.":"";
+
             var user = _userService.GetByUserName(userName);
 
             //var userRoles = _userManager.GetRolesAsync(userId).Result;
@@ -34,7 +39,7 @@ namespace Translate.Controllers
                 Email = user.Email,
                 MemberSince = user.MemberSince,
                 ProfileImageUrl = user.ProfileImageUrl,
-                UserRating = user.Rating,
+                UserPoints = _voteService.GetUserPoints(user.Id),
                 IsActive = user.IsActive,
                 //IsAdmin = userRoles.Contains("Admin")
               

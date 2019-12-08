@@ -54,6 +54,8 @@ namespace Translate.Migrations
         };
         string[] _fakeTitles = new string[]
         {
+                "Pytanie1: Buty, koty kolorowe okulary",
+                "Pytanie2: Auto krêgle Warszawa, pomarañcza",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus felis at erat?",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultrices metus eu elementum rhoncus. Suspendisse sodales luctus arcu et pulvinar. Quisque a?",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit.?"
@@ -194,7 +196,7 @@ namespace Translate.Migrations
                         {
                             Answer = a,
                             User = context.Users.Where(u => u.UserName == "user_" + i).FirstOrDefault(),
-                            VoteType = getRandomVoteType(i)
+                            VoteType = VoteType.Positive
                         });
                 }
             }

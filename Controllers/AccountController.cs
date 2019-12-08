@@ -166,7 +166,7 @@ namespace Translate.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Questions", "Forum");
                 }
                 AddErrors(result);
             }
@@ -442,6 +442,13 @@ namespace Translate.Controllers
         {
             foreach (var error in result.Errors)
             {
+                string errorMessage = error;
+                if (error.Contains("Name"))
+                {
+                    errorMessage = "Nazwa użytkownika jest zajęta!";
+                    ModelState.AddModelError("", errorMessage);
+                    break;
+                }
                 ModelState.AddModelError("", error);
             }
         }
@@ -452,7 +459,7 @@ namespace Translate.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Questions", "Forum");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

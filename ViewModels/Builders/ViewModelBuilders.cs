@@ -21,8 +21,8 @@ namespace Translate.ViewModels.Builders
                 DatePosted = question.Created,
                 LanguageFrom = BuildLanguage(question.LanguageFrom),
                 LanguageTo=BuildLanguage(question.LanguageTo),
-                AuthorId= "0c14d9f8-76d5-4b97-a73e-e0960e58540b",
-                AuthorName = "UserName",
+                AuthorId= question.User.Id,
+                AuthorName = question.User.UserName,
                 AuthorImageUrl = "/Content/images/users/user_0",
                 AnswersCount = question.Answers.Count()
             };

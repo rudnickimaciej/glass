@@ -20,36 +20,23 @@ namespace Translate.Controllers
     {
 
 
-        /// <summary>
-        /// Returns all questions associated with Forum with langFrom and langTo
-        /// </summary>
-        /// <returns></returns>
-        /// 
-
-       public ActionResult Index()
-       {
-            var latest = _forumService.GetLatestQuestions(10).ToList();
-            var questionListing = latest.Select(q => _builder.BuildQuestion(q)).ToList();
-            var model = new AllQuestionsOfForumViewModel
-            {
-                Questions = questionListing
-
-            };
-            return View("Questions", model);
-        }
-        public ActionResult Questions(string langFrom="", string langTo="")
+        public ActionResult Questions(string searchQuery, string langFrom="", string langTo="")
         {
             var questions = _forumService.GetQuestions(langFrom, langTo).ToList();
-
-            var questionListing = questions.Select(q => _builder.BuildQuestion(q)).ToList();
-
-            var model = new AllQuestionsOfForumViewModel
+            if(searchQuery!=null)
             {
-                Questions = questionListing,
-                
-               
-            };
-            return View("Questions",model);
+                questions.RemoveAll(q => !q.Title.Contains(searchQuery));
+            }        
+            var questionListing = questions.Select(q => _builder.BuildQuestion(q)).ToList();
+     
+            var model = new AllQuestionsOfForumViewModel
+                {
+                    Questions = questionListing,
+
+                };
+                return View("Questions", model);
+
+         
         }
     
         /// <summary>
@@ -73,6 +60,8 @@ namespace Translate.Controllers
                 viewModel.ActiveUserId = string.Empty;
             return View("Question",viewModel);
         }
+
+
         
         /// <summary>
         /// Returns AddQuestion Page with forms to fill and button to submit new question.
@@ -153,7 +142,7 @@ namespace Translate.Controllers
         public ActionResult DeleteQuestion(int questionId)
         {
             _forumService.DeleteQuestion(questionId);
-            return RedirectToAction("Index", "Home", null);
+            return RedirectToAction("Questions", "Forum", null);
         }
 
         [Authorize]

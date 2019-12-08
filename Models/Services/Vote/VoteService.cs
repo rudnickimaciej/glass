@@ -29,5 +29,21 @@ namespace Translate.Models.Services
 
             return _context.Answers.Where(a => a.Id == vote.Answer.Id).FirstOrDefault().Points;
         }
+
+        public int GetUserPoints(string userId)
+        {
+            var votesForUser = _context.Votes.Where(v => v.Answer.User.Id == userId);
+
+            int sum = 0 ;
+            foreach(Vote v in votesForUser)
+            {
+                if (v.VoteType.Equals(VoteType.Positive))
+                    sum++;
+                else if(v.VoteType.Equals(VoteType.Negative))
+                    sum--;
+            }
+            return sum;
+        }
+
     }
 }

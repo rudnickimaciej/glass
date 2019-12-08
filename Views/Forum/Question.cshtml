@@ -1,6 +1,7 @@
 ﻿@model  Translate.ViewModels.Complex.QuestionPageViewModel
 @using Translate.Models.Domain
 
+@{ bool authenticated = User.Identity.IsAuthenticated; }
 <div class="container body-content">
     @*<div class="row postHeader">
             <div class="postHeading">
@@ -59,7 +60,7 @@
         <div class="col-md-3 postAuthorContainer">
             <div class="postAuthorImage"></div>
 
-            @Html.ActionLink(Model.Question.AuthorName, "Details", "Profile", new { userId = Model.Question.AuthorId }, null)
+            @Html.ActionLink(Model.Question.AuthorName, "Details", "Profile", new { userName = Model.Question.AuthorName}, null)
             <span class="postDate">
                 @Model.Question.DatePosted
             </span>
@@ -117,57 +118,62 @@
         foreach (var ans in Model.Answers)
         {
             <div class="row replyContent">
-                @if (true @*ans.AuthorId == Model.ActiveUserId*@)
-                {
-                <div class="col-md-12">
-                    <a class="answerDeleteButton" answer_id="@ans.Id"> Usuń</a>
-                    @Html.ActionLink("Edytuj", "EditAnswer", "Forum", new { answerId = ans.Id }, new { @class = "answerEditButton" })
-
-                </div>
-                }
-                <div class="col-md-3 replyAuthorContainer">
-                    <div class="postAuthorImage"></div>
-
-
-                    @Html.ActionLink(ans.AuthorName, "Detail", "Profile", new { authorId = ans.AuthorId }, null)
-
-                    <span class="postDate">
-                        @ans.Created
-                    </span>
-
-                    @if (ans.AuthorIsAdmin)
+                    @if (true @*ans.AuthorId == Model.ActiveUserId*@)
                     {
-                        <div class="isAdmin smaller"> Admin</div>
-                        <br />
-                    }
+                    <div class="col-md-12">
+                        <a class="answerDeleteButton" answer_id="@ans.Id"> Usuń</a>
+                        @Html.ActionLink("Edytuj", "EditAnswer", "Forum", new { answerId = ans.Id }, new { @class = "answerEditButton" })
 
-                </div>
-
-                <div class="col-md-9 replyContentContainer">
-                    <div class="postContent">
-                        @Html.Raw(ans.Content)
                     </div>
-                </div>
-                @if (User.Identity.IsAuthenticated)
-                {
+                    }
+                    <div class="col-md-3 replyAuthorContainer">
+                        <div class="postAuthorImage"></div>
+
+
+                        @Html.ActionLink(ans.AuthorName, "Details", "Profile", new { userName = ans.AuthorName }, null)
+
+                        <span class="postDate">
+                            @ans.Created
+                        </span>
+
+                        @if (ans.AuthorIsAdmin)
+                        {
+                            <div class="isAdmin smaller"> Admin</div>
+                            <br />
+                        }
+
+                    </div>
+
+                    <div class="col-md-9 replyContentContainer">
+                        <div class="postContent">
+                            @Html.Raw(ans.Content)
+                        </div>
+                    </div>
+                
                     <div class="postButtons col-md-12">
                         <span class="rateButtons">
-                            <button class="btn btn-vote" value="1" answer_id="@ans.Id">
-                                <i class="material-icons">
-                                    thumb_up
-                                </i>
-                            </button>
+                            @if (authenticated)
+                            {
+                                <button class="btn btn-vote" value="1" answer_id="@ans.Id">
+                                    <i class="material-icons">
+                                        thumb_up
+                                    </i>
+                                </button>
+                            }
                             <button class="btn btn-points" answer_id="@ans.Id" disabled>
 
                                 @ans.Points
 
                             </button>
-                            <button class="btn btn-vote" value="-1" answer_id="@ans.Id">
-                                <i class="material-icons">
-                                    thumb_down
-                                </i>
-                            </button>
-                        </span>
+                            @if (authenticated)
+                            {
+                                <button class="btn btn-vote" value="-1" answer_id="@ans.Id">
+                                    <i class="material-icons">
+                                        thumb_down
+                                    </i>
+                                </button>
+                            }
+                            </span>
                     </div>
                 }
             </div>
