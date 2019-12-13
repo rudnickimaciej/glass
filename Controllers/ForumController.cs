@@ -70,6 +70,7 @@ namespace Translate.Controllers
         /// <returns></returns>
         /// 
 
+        [Authorize]
         public ActionResult AddQuestion()
         {
 
@@ -96,6 +97,7 @@ namespace Translate.Controllers
             var userId = User.Identity.GetUserId();
             var question = new Question
             {
+                Id=-1,
                 User=_userService.GetById(userId),
                 Title = model.Title,
                 Content = model.Content,
@@ -168,9 +170,10 @@ namespace Translate.Controllers
             {
                 Content = model.ReplyContent,
                 Created = model.Created,
-                Question = question,           
-                User = _userService.GetById(model.AuthorId)
+                Question = question           
+                //User = _userService.GetById(model.AuthorId)
             };
+            answer.User = _userService.GetById(model.AuthorId);
             _forumService.AddAnswer(answer);
             return RedirectToAction("Question", new { langFrom = langFrom.Abbreviation, langTo = langTo.Abbreviation, questionId = model.QuestionId });
         }

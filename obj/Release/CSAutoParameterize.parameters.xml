@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Translate.Dev-Web.config Connection String" description="Translate.Dev Connection String used in web.config by the application to access the database." defaultValue="Data Source=LAPTOP-96CUUS8B;Initial Catalog=Translate.dev;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\neonet\\Desktop\\Projekty\\Translate\\Translate\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Translate.Dev']/@connectionString" />
+  </parameter>
+  <parameter name="Translate.Deployment-Web.config Connection String" description="Translate.Deployment Connection String used in web.config by the application to access the database." defaultValue="MultipleActiveResultSets=true;Data Source=SQL5044.site4now.net;Initial Catalog=DB_A50D38_translate;User Id=DB_A50D38_translate_admin;Password=Mkjrq7o7o_" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\neonet\\Desktop\\Projekty\\Translate\\Translate\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Translate.Deployment']/@connectionString" />
+  </parameter>
+</parameters>

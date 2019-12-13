@@ -88,7 +88,7 @@ namespace Translate.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Nieprawidłowa nazwa konta lub hasło.");
                     return View("Login2",model);
             }
         }
@@ -395,7 +395,7 @@ namespace Translate.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Questions", "Forum");
         }
 
         //
@@ -446,6 +446,13 @@ namespace Translate.Controllers
                 if (error.Contains("Name"))
                 {
                     errorMessage = "Nazwa użytkownika jest zajęta!";
+                    ModelState.AddModelError("", errorMessage);
+                    break;
+                }
+                if(error.Contains("Email"))
+                {
+
+                    errorMessage = "Email jest już zajęty!";
                     ModelState.AddModelError("", errorMessage);
                     break;
                 }

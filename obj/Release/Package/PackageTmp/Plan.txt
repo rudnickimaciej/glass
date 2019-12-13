@@ -1,0 +1,38 @@
+﻿DO ZROBIENIA:
+
+
+
+####FUNKCJE PODSTAWOWE 
+ 
+ - Głosowanie na odpowiedź asynchronicznie - spróbować implementacji za pomocą SignalR.
+
+ - Ogarnąć TimeAgo 
+  - Dodawanie pytań  i odpowiedzi - coś się psuje, debugować z włączoną bazą.
+
+ - Zmienic Username na scecyficzny
+
+
+
+####FUNKCJE DODATKOWE
+ - System spamu 
+	- dodać opcję "Zgłoś jako spam". Okno z wyborem opcji Spam Reason i przyciskiem "Wyślij"
+	- Administator - w ustawieniach opcja "Spam"
+
+- Rejestracja
+	- blokowanie przycisku rejestracji bez zaakceptowania regulaminu
+
+
+	
+- Profil użytkownika
+  - prosty system powiadomień a la poczta email. 
+		- automatyczna wiadomość po zarejestrowaniu
+		- wiadomość po skasowaniu odpowiedzi przez administratora (powód skasowania)
+		- wiadomość o odpowiedzi na pytanie
+  - moje pytania
+  - moje odpowiedzi
+  - zmień zdjęcie
+  - zmień opis
+ 
+ - Konto
+	- resetowanie hasła
+	

@@ -37,7 +37,7 @@ namespace Translate.Migrations
                     new Lang("hiszpañski","esp"),
                     new Lang( "francuski","fr"),
                     new Lang("w³oski","itl"),
-                    new Lang( "german","ger"),
+                    new Lang( "niemiecki","ger")
             });
 
         private readonly List<string> users = new List<string>

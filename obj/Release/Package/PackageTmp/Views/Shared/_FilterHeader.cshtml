@@ -1,0 +1,30 @@
+﻿
+@using (Html.BeginForm("Questions", "Forum", FormMethod.Get, new { }))
+{
+
+    @Html.TextBox("SearchQuery","", new { @class = "homeSearch", placeholder = "Szukaj..." })
+    <table class="table" id="forumSearchDropdown">
+
+        <tbody>
+
+            <tr>
+                <td class="tableCenter">
+                    @Html.DropDownList("langFrom", new SelectList(ViewBag.Languages, "Abbreviation", "Name"), "Język", new { @class = "homeSearch", id = "langFromInput", data_style = "" })
+
+                </td>
+
+                <td class="tableCenter">
+                    <span class="arrow arrow-large arrow-black"> 	&#129122;</span>
+                </td>
+
+                <td class="tableCenter">
+                    @Html.DropDownList("langTo", new SelectList(ViewBag.Languages, "Abbreviation", "Name"), "Język", new { @class = "homeSearch", id = "langFromInput", data_style = "" })
+                </td>
+
+                <td class="tableCenter">
+                    <button type="submit" class="homeSearch"> Filtruj pytania</button>
+                </td>
+            </tr>
+        <tbody>
+    </table>
+}
