@@ -58,6 +58,7 @@ namespace Translate.Models.Repositiories
         }
 
 
+
         public ApplicationDbContext Context
         {
             get { return _context as ApplicationDbContext; }

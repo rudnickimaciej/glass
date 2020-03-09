@@ -3,6 +3,7 @@
 
 @{
     Layout = "~/Views/Ranking/_Layout.cshtml";
+    var position = Model.Pagination.CurrentPage * Model.Pagination.PageSize +1 - Model.Pagination.PageSize;
 }
 @Html.Partial("~/Views/Ranking/_RankingHeader.cshtml",new ViewDataDictionary { { "usersCount", Model.Users.Count() } })
 
@@ -44,10 +45,10 @@
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">Pozycja</th>
-                                <th scope="col">Punkty</th>
-                                <th scope="col">Użytkownik</th>
-                                <th scope="col">Ilość tłumaczeń</th>
+                                <th scope="col" class="cnt">Pozycja</th>
+                                <th scope="col" class="cnt">Punkty</th>
+                                <th scope="col" class="cnt">Użytkownik</th>
+                                <th scope="col"class="cnt">Ilość tłumaczeń</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
@@ -67,17 +68,17 @@
                             <tr>
 
 
-                                <th scope="row">
+                                <th scope="row" class="cnt">
                                     <div class="media align-items-center">
 
                                         <div class="media-body">
-                                            <span> 1</span>
+                                            <span>@position @{position++;}</span>
                                         </div>
                                     </div>
                                 </th>
 
 
-                                <td>
+                                <td class="cnt">
 
                                     <span class="badge-dot mr-1">
 
@@ -88,7 +89,7 @@
                                    
 
                                 </td>
-                                <td>
+                                <td >
                                     <div class="media-body">
                                         <a href="/users/@user.Username" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="@user.Username">
                                             <img alt="Image placeholder" src="~/Content/wwwroot/img/theme/team-1-800x800.jpg" class="rounded-circle">
@@ -102,7 +103,7 @@
                                     </div>
                                 </td>
 
-                                <td>
+                                <td class="cnt">
                                     <div class="media-body">
                                         <span> @user.UserAnswers.Count()</span>
 

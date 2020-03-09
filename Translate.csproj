@@ -2270,7 +2270,6 @@
     <Content Include="Content\wwwroot\vendor\nucleo\fonts\nucleo-icons.woff" />
     <Content Include="Content\wwwroot\vendor\nucleo\fonts\nucleo-icons.woff2" />
     <Content Include="Content\wwwroot\vendor\prismjs\components.json" />
-    <Content Include="Viewsorginal\Profile\Details.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\_Footer.cshtml" />
@@ -2427,44 +2426,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Viewsorginal\Web.config" />
-    <Content Include="Viewsorginal\_ViewStart.cshtml" />
-    <Content Include="Viewsorginal\Shared\Error.cshtml" />
-    <Content Include="Viewsorginal\Shared\_Layout.cshtml" />
-    <Content Include="Viewsorginal\Home\Index.cshtml" />
-    <Content Include="Viewsorginal\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Viewsorginal\Account\ConfirmEmail.cshtml" />
-    <Content Include="Viewsorginal\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Viewsorginal\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Viewsorginal\Account\ForgotPassword.cshtml" />
-    <Content Include="Viewsorginal\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Viewsorginal\Account\Login.cshtml" />
-    <Content Include="Viewsorginal\Account\Register.cshtml" />
-    <Content Include="Viewsorginal\Account\ResetPassword.cshtml" />
-    <Content Include="Viewsorginal\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Viewsorginal\Account\SendCode.cshtml" />
-    <Content Include="Viewsorginal\Account\VerifyCode.cshtml" />
-    <Content Include="Viewsorginal\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Viewsorginal\Manage\ChangePassword.cshtml" />
-    <Content Include="Viewsorginal\Manage\Index.cshtml" />
-    <Content Include="Viewsorginal\Manage\ManageLogins.cshtml" />
-    <Content Include="Viewsorginal\Manage\SetPassword.cshtml" />
-    <Content Include="Viewsorginal\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Viewsorginal\Shared\Lockout.cshtml" />
-    <Content Include="Viewsorginal\Shared\_LoginPartial.cshtml" />
-    <Content Include="Viewsorginal\Forum\Question.cshtml" />
-    <Content Include="Viewsorginal\Forum\AddQuestion.cshtml" />
-    <Content Include="Viewsorginal\Forum\Questions.cshtml" />
-    <Content Include="Viewsorginal\Profile\Details2.cshtml" />
-    <Content Include="Viewsorginal\Account\Register2.cshtml" />
-    <Content Include="Viewsorginal\Account\Login2.cshtml" />
-    <Content Include="Viewsorginal\Shared\_Account.cshtml" />
-    <Content Include="Viewsorginal\Forum\AddAnswer.cshtml" />
-    <Content Include="Viewsorginal\Spam\Index.cshtml" />
-    <Content Include="Viewsorginal\Forum\EditAnswer.cshtml" />
-    <Content Include="Viewsorginal\Forum\EditQuestion.cshtml" />
-    <Content Include="Viewsorginal\Shared\_FilterHeader.cshtml" />
-    <Content Include="Viewsorginal\Shared\_QuestionRecord.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_Sidebar.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
@@ -2472,9 +2433,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Viewsorginal\Base\" />
-    <Folder Include="Viewsorginal\Test\" />
-    <Folder Include="Viewsorginal\Vote\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

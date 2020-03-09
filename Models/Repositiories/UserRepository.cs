@@ -25,6 +25,7 @@ namespace Translate.Models.Repositiories
         public ICollection<ApplicationUser> GetUsers(int page, int pageSize)
         {
             return Context.Users.OrderByDescending(u => u.Rating).Skip((page - 1) * pageSize).Take(pageSize).ToList();
+        
         }
         
         public ApplicationDbContext Context
