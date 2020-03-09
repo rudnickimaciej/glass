@@ -10,5 +10,7 @@ namespace Translate.ViewModels.Complex
     {
         public IEnumerable<QuestionViewModel> LatestQuestions { get; set; }
         public string SearchQuery { get; set; }
+        
+
     }
 }

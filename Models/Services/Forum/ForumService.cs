@@ -15,38 +15,44 @@ namespace Translate.Models.Services
             _context = new ApplicationDbContext();
         }
 
-        public Language GetLanguage(string abbr)
-        {
-            return _context.Languages.Where(l => l.Abbreviation == abbr).FirstOrDefault();
-        }
-        public IEnumerable<Language> GetAllLanguages()
-        {
-            return _context.Languages;
-        }
+      
         public Question GetQuestion(int questionId)
 
         {
             return _context.Questions.Where(q => q.Id == questionId).
                 Include(q => q.Answers.Select(a => a.User)).
-                Include(q => q.User).
-                Include(q => q.LanguageFrom).
-                Include(q => q.LanguageTo).FirstOrDefault();
+                Include(q => q.User).FirstOrDefault();
         }
-        public IEnumerable<Question> GetQuestions(string langFrom, string langTo)
+
+        public int GetAllQuestionsCount()
+        {
+            return _context.Questions.Count();
+        }
+
+        public  int GetAllQuestionsMatchingQueryCount(string query)
+        {
+            if (query != null)
+                return _context.Questions.Where(q => q.Content.Contains(query)).Count();
+            else return GetAllQuestionsCount();
+        }
+
+        public IEnumerable<Question> GetQuestions(string query,int currentPage,int pageSize)
+        {
+            if(query!=null)
+                return _context.Questions.Where(q=>q.Content.Contains(query)).OrderBy(q=>q.Created).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+            else
+                return _context.Questions.OrderBy(q => q.Created).Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+
+        }
+        public IEnumerable<Question> GetQuestions(string query)
         {
             IQueryable<Question> questions;
-            if (string.IsNullOrEmpty(langFrom) && string.IsNullOrEmpty(langTo))
+            if (string.IsNullOrEmpty(query))
                 questions = _context.Questions;
 
-            else if (!string.IsNullOrEmpty(langFrom) && string.IsNullOrEmpty(langTo))
-                questions = _context.Questions.Where(q => q.LanguageFrom.Abbreviation == langFrom);
-
-            else if (string.IsNullOrEmpty(langFrom) && !string.IsNullOrEmpty(langTo))
-                questions = _context.Questions.Where(q => q.LanguageTo.Abbreviation == langTo);
-
             else
-                questions = _context.Questions.Where(f => (f.LanguageFrom.Abbreviation == langFrom) && (f.LanguageTo.Abbreviation == langTo));
-
+                questions = _context.Questions.Where(q => q.Content.Contains(query));
+       
             return QuestionInclude(questions);
         }
 
@@ -62,6 +68,14 @@ namespace Translate.Models.Services
             return QuestionInclude(questions);
 
         }
+public        IEnumerable<Question> GetUserQuestions(string userId)
+        {
+            return _context.Questions.Where(q => q.User.Id == userId).ToList();
+        }
+      public  IEnumerable<Answer> GetUserAnswers(string userId)
+        {
+            return _context.Answers.Where(a => a.User.Id == userId).ToList();
+        }
 
         public Question AddQuestion(Question question)
         {
@@ -74,10 +88,8 @@ namespace Translate.Models.Services
         public Question EditQuestion(EditQuestionFields editQuestion)
         {
             var questionToEdit = _context.Questions.SingleOrDefault(q => q.Id == editQuestion.Id);
-            questionToEdit.LanguageFrom = GetLanguage(editQuestion.LanguageFrom);
-            questionToEdit.LanguageTo = GetLanguage(editQuestion.LanguageTo);
+
             questionToEdit.Content = editQuestion.Content;
-            questionToEdit.Title = editQuestion.Title;
             _context.SaveChanges();
 
             //_context.Entry(questionToEdit).Reload();
@@ -143,9 +155,7 @@ namespace Translate.Models.Services
         {
             return questions.
                 Include(q => q.Answers).
-                Include(q=>q.User).
-                Include(q=>q.LanguageFrom).
-                Include(q=>q.LanguageTo);
+                Include(q => q.User);
                
         }
 

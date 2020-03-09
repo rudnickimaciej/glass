@@ -60,7 +60,7 @@ namespace Translate.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View("Login2");
+            return View("Login");
         }
 
         //
@@ -72,7 +72,7 @@ namespace Translate.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View("Login2",model);
+                return View("Login",model);
             }
 
             // This doesn't count login failures towards account lockout
@@ -89,7 +89,7 @@ namespace Translate.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Nieprawidłowa nazwa konta lub hasło.");
-                    return View("Login2",model);
+                    return View("Login",model);
             }
         }
 
@@ -141,7 +141,7 @@ namespace Translate.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View("Register2");
+            return View("Register");
         }
 
         //
@@ -172,7 +172,7 @@ namespace Translate.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View("Register2",model);
+            return View("Register",model);
         }
 
         //

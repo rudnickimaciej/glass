@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNet.Identity
+
+
+    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+        <div class=" dropdown-header noti-title">
+            <h6 class="text-overflow m-0">Witaj!</h6>
+        </div>
+        @if (Request.IsAuthenticated)
+        {
+            <a href='@Url.Action("UserProfile","Profile",new { userName =User.Identity.GetUserName()})' class="dropdown-item">
+                <i class="ni ni-single-02"></i>
+                <span>Mój profil</span>
+            </a>
+            <a href="#" class="dropdown-item">
+                <i class="ni ni-settings-gear-65"></i>
+                <span>Ustawienia</span>
+            </a>
+            <a href="#" class="dropdown-item">
+                <i class="ni ni-calendar-grid-58"></i>
+                <span>Aktywność</span>
+            </a>
+            <a href="#" class="dropdown-item">
+                <i class="ni ni-support-16"></i>
+                <span>Pomoc</span>
+            </a>
+            <div class="dropdown-divider"></div>
+
+            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @class = "form-inlinem", role = "form" }))
+            { @Html.AntiForgeryToken();
+            <button type="submit" class="dropdown-item logout">
+                <i class="ni ni-fat-remove"></i>
+                <span class="logout">Wyloguj </span>
+            </button>
+        }
+
+    }
+
+    else
+    {
+        <a class="dropdown-item" asp-area="Identity" href='@Url.Action("Login","Account")'>
+            <i class="ni ni-lock-circle-open"></i>
+            <span>Logowanie</span>
+        </a>
+        <a class="dropdown-item" asp-area="Identity" href='@Url.Action("Register","Account")'>
+            <i class="ni ni-single-02"></i>
+            <span>Rejestracja</span>
+        </a>
+    }
+
+    </div>

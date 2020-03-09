@@ -1,0 +1,61 @@
+﻿@model Translate.ViewModels.Complex.AllQuestionsOfForumViewModel
+
+
+<div class="container body-content  main-container">
+    <div class="row frontPageSplash">
+        <div class="col-md-12">
+            <div>
+                @Html.Partial("_FilterHeader")
+            </div>
+        </div>
+    </div>
+
+    <div class="row frontPageContent">
+        <select disabled class="filterDropdown btn btn-default" id="sortSelect" name="Filtruj">
+
+            <option selected disabled> Filtruj</option>
+            <option class="">Data dodania </option>
+            <option> Najnowsze</option>
+            <option>Najstarsze </option>
+
+            <option class="">Popularność </option>
+            <option>Najbardziej popularne</option>
+            <option>Najmniej popularne </option>
+        </select>
+        @Html.ActionLink("Dodaj pytanie", "AddQuestion", "Forum", null, new { @class = "btn btn-success btn-newPost" })
+
+    </div>
+
+
+    @if (Model.Questions.Any())
+    {
+        <div class="row frontPageContent">
+            <h3 id="latestPosts"></h3>
+
+            @foreach (var question in Model.Questions)
+            {
+                @Html.Partial("_QuestionRecord", question)
+
+            }
+
+        </div>
+    }
+    else
+    {
+        <div class="row frontPageContent" id="noQuestions">
+            <h1> Nie znaleziono żadnych pytań</h1>
+        </div>
+    }
+</div>
+
+
+@section Scripts {
+    <script>
+        function clearThis(target) {
+            target.value = "";
+        }
+        jQuery(document).ready(function () {
+            jQuery("abbr.timeago").timeago();
+        });
+    </script>
+}

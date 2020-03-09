@@ -1,4 +1,5 @@
 ﻿using System;
+using Translate.ViewModels.Helpers;
 namespace Translate.ViewModels.Components
 {
     /// <summary>
@@ -7,11 +8,16 @@ namespace Translate.ViewModels.Components
     public class QuestionViewModel
     {
         public int Id { get; set; }
-        public string Title { get; set; }
         public string Content { get; set; }
+        
+        public string ShortContent(int length) {
 
-        public LanguageViewModel LanguageFrom { get; set; }
-        public LanguageViewModel LanguageTo { get; set; }
+            if (Content.Length < length)
+                return Content;
+            else
+                return Content.Substring(0, length +1);
+        }
+
 
         public string AuthorId { get; set; }
         public string AuthorName { get; set; }
@@ -20,6 +26,11 @@ namespace Translate.ViewModels.Components
         public int AuthorRating{ get; set; }
 
         public DateTime DatePosted { get; set; }
+        public string DateFormat
+        {
+            get { return DatePosted.ToString("MM/dd/yyyy HH:mm"); }
+            private set { }
+        }
         public int AnswersCount { get; set; }
 
 

@@ -12,7 +12,7 @@ namespace Translate.Models.Services
         ApplicationUser GetByUserName(string userName);
         IEnumerable<ApplicationUser> GetAllActiveUsers();
         IEnumerable<ApplicationUser> GetAll();
-
+        IEnumerable<ApplicationUser> GetUsers(int page, int pageSize);
         Task SetProfileImage(string id, Uri uri);
         Task IncrementRating(string id, Type type);
     }

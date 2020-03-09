@@ -16,13 +16,6 @@ namespace Translate.ViewModels.Complex
         public string QuestionTitle { get; set; }
         public string QuestionContent { get; set; }
 
-        public int LanguageFromId { get; set; }
-        public string LanguageFromImageUrl{ get; set; }
-        public string LanguageFromAbbreviation { get; set; }
-
-        public int LanguageToId { get; set; }
-        public string LanguageToImageUrl { get; set; }
-        public string LanguageToAbbreviation { get; set; }
 
     }
 }

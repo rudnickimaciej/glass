@@ -20,7 +20,6 @@ namespace Translate.ViewModels.Components
         public int QuestionId { get; set; }
         public string QuestionTitle { get; set; }
         public string QuestionContent { get; set; }
-        public LanguageViewModel LanguageFrom { get; set; }
-        public LanguageViewModel  LanguageTo { get; set; }
+
     }
 }

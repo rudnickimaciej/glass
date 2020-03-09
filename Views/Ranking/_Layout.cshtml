@@ -1,0 +1,32 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("_PageHeadElement")
+
+    <link href="~/Content/wwwroot/css/site.css" rel="stylesheet" />
+    <link href="~/Content/wwwroot/css/flags.css" rel="stylesheet" />
+
+    @RenderSection("Styles", required: false)
+    @RenderSection("HeadScripts", required: false)
+</head>
+<body>
+    @*<partial name="_GoogleTagManagerBodyElement" />*@
+
+    @Html.Partial("_Sidebar")
+
+    <div class="main-content">
+        @Html.Partial("_Navbar")
+
+
+        @RenderBody()
+
+
+    </div>
+
+
+    @Html.Partial("_ThemeScripts")
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

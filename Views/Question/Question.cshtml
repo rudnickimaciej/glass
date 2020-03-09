@@ -1,0 +1,331 @@
+﻿
+@using Microsoft.AspNet.Identity
+@using Translate.Models.Domain;
+@model Translate.ViewModels.Complex.QuestionPageViewModel
+
+@{
+    ViewData["Title"] = "PYTANIE " + Model.Question.Id;
+}
+
+<div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+        <div class="card card-profile shadow">
+
+
+            <div class="card-body pt-0 pt-md-4">
+
+                <div class="text-center">
+                    <a href="/users/user_0" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="user_0">
+                        <img alt="Image placeholder" src="/Content/wwwroot/img/theme/team-1-800x800.jpg" class="rounded-circle">
+                    </a>
+                    <h3>
+                        @Html.ActionLink(Model.Question.AuthorName, "UserProfile", "Profile", new { userName = Model.Question.AuthorName }, null)
+                        <span class="font-weight-light"></span>
+                    </h3>
+                    <div class="h5 font-weight-300">
+                        <i class="ni location_pin mr-2"></i>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-8 order-xl-1">
+        <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h3 class="mb-0">
+                            @Model.Question.Content
+                        </h3>
+                    </div>
+                    <div class="col-4 text-right">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            if (User.Identity.GetUserId().Equals(Model.Question.AuthorId))
+                            {
+
+                                <a href="#!" class="btn btn-sm btn-primary">Edytuj</a>
+                            }
+
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <form asp-controller="Home" asp-action="Profile" method="POST">
+                    <h6 class="heading-small text-muted mb-4">20.15.2020</h6>
+                    <div class="pl-lg-4">
+                        <div class="row">
+
+
+                            <div class="col-lg-12 text-center">
+                                <button class="btn btn-success mt-4 mb-4" href="" type="submit">
+                                    @Html.ActionLink("Dodaj tłumaczenie", "CreateAnswer", "Forum", new { questionId = @Model.Question.Id }, new { style = "color:white" })
+
+
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+
+
+@if (Model.Answers.Count() > 0)
+{
+    foreach (var ans in Model.Answers)
+    {
+        <br>
+        <div class="row">
+
+            <div class="col-xl-8 order-xl-1">
+                <div class="card bg-secondary shadow">
+
+                    <div class="card-header bg-white border-0">
+                        <div class="row align-items-center">
+                            <div class="col-10">
+                                <h3 class="mb-0">
+                                    @ans.Content
+                                </h3>
+                            </div>
+                            <div class="col-2 text-right">
+
+                                <a href='~/users/@ans.AuthorName' class="avatar avatar-sm" data-toggle="tooltip" data-original-title=@ans.AuthorName>
+                                    <img alt="Image placeholder" src="~/Content/wwwroot/img/theme/team-1-800x800.jpg" class="rounded-circle">
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row align-items-center">
+
+                            <div class="col-12">
+                                <h6 class="heading-small text-muted mb-4">@ans.Created</h6>
+
+                            </div>
+
+                            <div class="col-12 text-right">
+                                @if (Model.VotesDictionary.ContainsKey(ans.Id))
+                                {
+                                    VoteType voteType = Model.VotesDictionary[ans.Id];
+                                    if (voteType.Equals(VoteType.Positive))
+                                    {
+
+                                        <btn href="#!" class="btn btn-back btn-sm btn-vote btn-success clicked positiveVote" clicked disabled value="1" answer_id="@ans.Id"><i class="ni ni-bold-up"></i></btn>
+                                        <btn href="#" class="btn btn-sm btn-default btn-points" answer_id="@ans.Id"  points ="@ans.Points" disabled>@ans.Points</btn>
+                                        <btn href="#!" class="btn btn-sm btn-vote btn-light negativeVote" value="-1" answer_id="@ans.Id"><i class="ni ni-bold-down"></i></btn>
+                                    }
+
+                                    else
+                                    {
+                                        <btn href="#!" class="btn btn-back btn-sm btn-vote btn-light positiveVote " value="1" answer_id="@ans.Id"><i class="ni ni-bold-up"></i></btn>
+                                        <btn href="#" class="btn btn-sm btn-default btn-points" answer_id="@ans.Id" points ="@ans.Points" disabled>@ans.Points</btn>
+                                        <btn href="#!" class="btn btn-sm btn-vote btn-danger clicked negativeVote" clicked disabled value="-1" answer_id="@ans.Id"><i class="ni ni-bold-down"></i></btn>
+                                    }
+                                }
+
+                                else
+                                {
+                                    <btn href="#!" class="btn btn-back btn-sm btn-vote btn-light positiveVote " value="1" answer_id="@ans.Id"><i class="ni ni-bold-up"></i></btn>
+                                    <btn href="#" class="btn btn-sm btn-default btn-points" answer_id="@ans.Id" disabled points ="@ans.Points"> @ans.Points</btn>
+                                    <btn href="#!" class="btn btn-sm btn-vote btn-light negativeVote" value="-1" answer_id="@ans.Id"><i class="ni ni-bold-down"></i></btn>
+                                }
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <h1> Nikt nie dodał odpowiedzi na te pytanie.</h1>
+    <button class="btn btn-neutral">
+        @Html.ActionLink("Bądź pierwszy!", "CreateAnswer", "Forum", new { questionId = @Model.Question.Id }, new { })
+    </button>
+
+}
+
+
+
+@section scripts
+{
+
+    <script>
+        $(document).ready(function () {
+
+          $(".btn-vote").click(function () {
+
+        //result object data that will be put in Json
+        var answerId = $(this).attr("answer_id");
+        var value;
+
+
+        //Button references (two variables will to one of the buttons depending on which button was clicked)
+        var clickedBtn = $(this);
+        var negBtn = $("btn.btn-vote.negativeVote[answer_id='" + answerId + "']")
+        var posBtn = $("btn.btn-vote.positiveVote[answer_id='" + answerId + "']")
+        var pointsView = $("btn.btn-points[answer_id='" + answerId + "']")
+
+
+        //Clicked attributes
+
+        var clickedAttr = clickedBtn.attr("clicked");
+        var posBtnClickedAttr = posBtn.attr("clicked");
+        var negBtnClickedAttr = negBtn.attr("clicked");
+
+
+        var pointsOnSide = pointsView.attr("points");
+
+
+
+        if (clickedBtn.hasClass("positiveVote")) {
+            var points;
+
+            if (typeof clickedAttr !== typeof undefined && clickedAttr !== false) {
+
+                //Positive btn is already clicked. Herem we click it again so we unclick it by changing colour to default and decrementing points value
+
+                clickedBtn.removeAttr("clicked"); //change 'clicked' flag
+
+                clickedBtn.removeClass(greenBtn) //change colour to defaults
+                clickedBtn.addClass(defaultBtn);
+                var points = parseInt(pointsOnSide) - 1;
+                pointsView.text(points); //change points
+                pointsView.attr("points", points);
+
+                value = 0;
+
+            }
+            else {
+
+                //Positive btn was not clicked before. Here we click it by changing colour to green and incrementing points;
+
+                clickedBtn.attr("clicked", '') //change 'clicked' flag
+
+                clickedBtn.addClass(greenBtn); //change colour to green
+                clickedBtn.removeClass(defaultBtn);
+
+                points = parseInt(pointsOnSide) + 1;
+                pointsView.text(points); //change points
+                pointsView.attr("points", points);
+
+
+                value = 1;
+
+                if (typeof negBtnClickedAttr !== typeof undefined && negBtnClickedAttr !== false) {
+
+                    //While clicking positive btn, there might be the case that negative button was already clicked. If so, we need to change it to default colour and remove 'clicked' flag
+
+                    negBtn.removeClass(redBtn);
+                    negBtn.addClass(defaultBtn);
+
+                    points += 1;
+                    negBtn.removeAttr('clicked');
+                }
+
+                pointsView.text(points); //change points
+                pointsView.attr("points", points);
+            }
+        }
+        else if (clickedBtn.hasClass("negativeVote")) {
+
+            var points;
+            if (typeof clickedAttr !== typeof undefined && clickedAttr !== false) {
+
+                //Negativce btn is already clicked. Here we click it again so we unclick it by changing colour to default and incrementing points value
+
+                clickedBtn.removeClass(redBtn); //change colour to defaults
+                clickedBtn.addClass(defaultBtn);
+
+                points = parseInt(pointsOnSide) + 1;
+
+                pointsView.text(points); //change points
+                pointsView.attr("points", points);
+
+                clickedBtn.removeAttr("clicked");  //remove 'clicked' flag
+                value = 0;
+
+            }
+
+            else {
+
+                //Negativce btn was not clicked before. Here we click it by changing colour to red and decrement points;
+                clickedBtn.addClass(redBtn);  //change colour to red
+                clickedBtn.removeClass(defaultBtn);
+                clickedBtn.attr("clicked", '')
+                points = parseInt(pointsOnSide) - 1;
+
+
+
+                //While clicking negativce btn, there might be the case that positive button was already clicked. If so, we need to change it to default colour and remove 'clicked' flag
+
+                if (typeof posBtnClickedAttr !== typeof undefined && posBtnClickedAttr !== false) {
+
+                    posBtn.removeClass(greenBtn); //change positive button colour to default
+                    posBtn.addClass(defaultBtn);
+
+                    points = - 1;
+                    posBtn.removeAttr('clicked'); //remove 'clicked' flag from positive button
+
+                }
+
+                pointsView.text(points); //change points
+                pointsView.attr("points", points);
+                value = -1;
+
+            }
+        }
+
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("Vote", "Vote")',
+            data: {
+                value: value,
+                user_id: '@Model.ActiveUserId',
+                answer_id: answerId
+                //access_token: $("#access_token").val()
+            },
+            beforeSend: function (data) {
+                console.log(data);
+                console.log(value);
+                console.log("Active user id: ");
+                console.log(data["user_id"]);
+                console.log(data["answer_id"]);
+            },
+
+            success: function (result) {
+
+                // Your logic
+
+            },
+            error: function (jqxhr, status, exception) {
+                console.log('Exception:', exception);
+            }
+
+        });
+
+    });
+        });
+
+    </script>
+}
+
+

@@ -1,0 +1,68 @@
+﻿
+@model Translate.ViewModels.Components.ReplyViewModel
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewData["Title"] = "ODPOWIEDŹ NA PYTANIE " + Model.Id;
+}
+
+    <div class="row">
+
+        <div class="col-xl-12 order-xl-1">
+            <div class="card bg-secondary shadow">
+                <div class="card-header bg-white border-0">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h3 class="mb-0">
+                              @Model.QuestionContent
+                            </h3>
+                        </div>
+                        <div class="col-4 text-right">
+                            <a href="#!" class="btn btn-sm btn-primary">Settings</a>
+                        </div>
+                    </div>
+                </div>
+           
+
+                @using (Html.BeginForm("AddAnswer", "Forum", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+
+                    @Html.TextAreaFor(m => m.ReplyContent, new { @class = "form-control form-control-alternative", rows = "3", placeholder = "Napisz swoje tłumaczenie" })
+                    @Html.ValidationMessageFor(m => m.ReplyContent, "", new { @class = "text-danger" })
+
+
+                    <div class="pl-lg-4">
+                        <div class="row">
+
+
+                            <div class="col-lg-12 text-center">
+                                <button class="btn btn-success mt-4 mb-4" href="" type="submit">
+                                   Dodaj tłumaczenie
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    @Html.HiddenFor(m => m.Created);
+                    @Html.HiddenFor(m => m.QuestionId);
+                    @Html.HiddenFor(m => m.AuthorId);
+
+
+
+
+                }
+
+
+              
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+

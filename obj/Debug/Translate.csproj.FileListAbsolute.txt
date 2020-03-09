@@ -149,3 +149,481 @@ C:\Users\neonet\Desktop\Projekty\Translate\Translate\bin\Microsoft.Extensions.Lo
 C:\Users\neonet\Desktop\Projekty\Translate\Translate\bin\Microsoft.Extensions.Options.xml
 C:\Users\neonet\Desktop\Projekty\Translate\Translate\obj\Debug\Translate.Migrations.Initial.resources
 C:\Users\neonet\Desktop\Projekty\Translate\Translate\obj\Debug\Translate.csproj.GenerateResource.cache
+D:\Projekty\Translate\Translate\bin\Translate.dll.config
+D:\Projekty\Translate\Translate\bin\Translate.dll
+D:\Projekty\Translate\Translate\bin\Translate.pdb
+D:\Projekty\Translate\Translate\bin\roslyn\csc.exe
+D:\Projekty\Translate\Translate\bin\roslyn\csc.exe.config
+D:\Projekty\Translate\Translate\bin\roslyn\csc.rsp
+D:\Projekty\Translate\Translate\bin\roslyn\csi.exe
+D:\Projekty\Translate\Translate\bin\roslyn\csi.exe.config
+D:\Projekty\Translate\Translate\bin\roslyn\csi.rsp
+D:\Projekty\Translate\Translate\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Projekty\Translate\Translate\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Projekty\Translate\Translate\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Projekty\Translate\Translate\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Projekty\Translate\Translate\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Projekty\Translate\Translate\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Projekty\Translate\Translate\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Projekty\Translate\Translate\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Projekty\Translate\Translate\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Projekty\Translate\Translate\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Projekty\Translate\Translate\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Projekty\Translate\Translate\bin\roslyn\System.AppContext.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Collections.Immutable.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Console.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.IO.Compression.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.IO.FileSystem.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.IO.Pipes.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Reflection.Metadata.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Security.AccessControl.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Security.Claims.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.ValueTuple.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Xml.XPath.dll
+D:\Projekty\Translate\Translate\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Projekty\Translate\Translate\bin\roslyn\vbc.exe
+D:\Projekty\Translate\Translate\bin\roslyn\vbc.exe.config
+D:\Projekty\Translate\Translate\bin\roslyn\vbc.rsp
+D:\Projekty\Translate\Translate\bin\roslyn\VBCSCompiler.exe
+D:\Projekty\Translate\Translate\bin\roslyn\VBCSCompiler.exe.config
+D:\Projekty\Translate\Translate\bin\Antlr3.Runtime.dll
+D:\Projekty\Translate\Translate\bin\EntityFramework.dll
+D:\Projekty\Translate\Translate\bin\EntityFramework.SqlServer.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNet.WebHooks.Common.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNetCore.Http.Features.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Configuration.Binder.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Configuration.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Identity.Core.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Logging.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Options.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Primitives.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.Google.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.Web.Infrastructure.dll
+D:\Projekty\Translate\Translate\bin\Newtonsoft.Json.dll
+D:\Projekty\Translate\Translate\bin\Owin.dll
+D:\Projekty\Translate\Translate\bin\System.Buffers.dll
+D:\Projekty\Translate\Translate\bin\System.ComponentModel.Annotations.dll
+D:\Projekty\Translate\Translate\bin\System.IO.Pipelines.dll
+D:\Projekty\Translate\Translate\bin\System.Memory.dll
+D:\Projekty\Translate\Translate\bin\System.Net.Http.Formatting.dll
+D:\Projekty\Translate\Translate\bin\System.Numerics.Vectors.dll
+D:\Projekty\Translate\Translate\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Projekty\Translate\Translate\bin\System.Threading.Tasks.Extensions.dll
+D:\Projekty\Translate\Translate\bin\System.Web.Helpers.dll
+D:\Projekty\Translate\Translate\bin\System.Web.Http.dll
+D:\Projekty\Translate\Translate\bin\System.Web.Mvc.dll
+D:\Projekty\Translate\Translate\bin\System.Web.Optimization.dll
+D:\Projekty\Translate\Translate\bin\System.Web.Razor.dll
+D:\Projekty\Translate\Translate\bin\System.Web.WebPages.Deployment.dll
+D:\Projekty\Translate\Translate\bin\System.Web.WebPages.dll
+D:\Projekty\Translate\Translate\bin\System.Web.WebPages.Razor.dll
+D:\Projekty\Translate\Translate\bin\WebGrease.dll
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNet.WebHooks.Common.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNetCore.Cryptography.KeyDerivation.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNetCore.Http.Features.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Configuration.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Configuration.Binder.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Identity.Core.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Logging.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Options.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Extensions.Primitives.xml
+D:\Projekty\Translate\Translate\bin\Newtonsoft.Json.xml
+D:\Projekty\Translate\Translate\bin\System.Buffers.xml
+D:\Projekty\Translate\Translate\bin\System.IO.Pipelines.xml
+D:\Projekty\Translate\Translate\bin\System.Memory.xml
+D:\Projekty\Translate\Translate\bin\System.Net.Http.Formatting.xml
+D:\Projekty\Translate\Translate\bin\System.Numerics.Vectors.xml
+D:\Projekty\Translate\Translate\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Projekty\Translate\Translate\bin\System.Threading.Tasks.Extensions.xml
+D:\Projekty\Translate\Translate\bin\System.Web.Http.xml
+D:\Projekty\Translate\Translate\bin\System.Web.Helpers.xml
+D:\Projekty\Translate\Translate\bin\System.Web.Mvc.xml
+D:\Projekty\Translate\Translate\bin\System.Web.Optimization.xml
+D:\Projekty\Translate\Translate\bin\System.Web.Razor.xml
+D:\Projekty\Translate\Translate\bin\System.Web.WebPages.xml
+D:\Projekty\Translate\Translate\bin\System.Web.WebPages.Deployment.xml
+D:\Projekty\Translate\Translate\bin\System.Web.WebPages.Razor.xml
+D:\Projekty\Translate\Translate\bin\Antlr3.Runtime.pdb
+D:\Projekty\Translate\Translate\bin\EntityFramework.xml
+D:\Projekty\Translate\Translate\bin\EntityFramework.SqlServer.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.Google.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Projekty\Translate\Translate\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Projekty\Translate\Translate\obj\Debug\Translate.csprojAssemblyReference.cache
+D:\Projekty\Translate\Translate\obj\Debug\Translate.Migrations.Initial.resources
+D:\Projekty\Translate\Translate\obj\Debug\Translate.csproj.GenerateResource.cache
+D:\Projekty\Translate\Translate\obj\Debug\Translate.csproj.CopyComplete
+D:\Projekty\Translate\Translate\obj\Debug\Translate.dll
+D:\Projekty\Translate\Translate\obj\Debug\Translate.pdb
+C:\Users\Maciek\Desktop\Translate\bin\Translate.dll.config
+C:\Users\Maciek\Desktop\Translate\bin\Translate.dll
+C:\Users\Maciek\Desktop\Translate\bin\Translate.pdb
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\csc.exe
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\csc.exe.config
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\csc.rsp
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\csi.exe
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\csi.exe.config
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\csi.rsp
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.AppContext.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Console.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.IO.Compression.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Security.Claims.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.ValueTuple.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\vbc.exe
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\vbc.exe.config
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\vbc.rsp
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\VBCSCompiler.exe
+C:\Users\Maciek\Desktop\Translate\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Maciek\Desktop\Translate\bin\Antlr3.Runtime.dll
+C:\Users\Maciek\Desktop\Translate\bin\EntityFramework.dll
+C:\Users\Maciek\Desktop\Translate\bin\EntityFramework.SqlServer.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNet.WebHooks.Common.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Configuration.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Logging.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Options.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Maciek\Desktop\Translate\bin\Newtonsoft.Json.dll
+C:\Users\Maciek\Desktop\Translate\bin\Owin.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Buffers.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.ComponentModel.Annotations.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.IO.Pipelines.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Memory.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Net.Http.Formatting.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Numerics.Vectors.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.Helpers.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.Http.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.Mvc.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.Optimization.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.Razor.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.WebPages.dll
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.WebPages.Razor.dll
+C:\Users\Maciek\Desktop\Translate\bin\WebGrease.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNet.WebHooks.Common.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNetCore.Cryptography.KeyDerivation.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Configuration.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Configuration.Binder.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Identity.Core.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Logging.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Options.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\Maciek\Desktop\Translate\bin\Newtonsoft.Json.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Buffers.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.IO.Pipelines.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Memory.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Net.Http.Formatting.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Numerics.Vectors.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.Http.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.Helpers.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.Mvc.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.Optimization.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.Razor.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.WebPages.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Maciek\Desktop\Translate\bin\System.Web.WebPages.Razor.xml
+C:\Users\Maciek\Desktop\Translate\bin\Antlr3.Runtime.pdb
+C:\Users\Maciek\Desktop\Translate\bin\EntityFramework.xml
+C:\Users\Maciek\Desktop\Translate\bin\EntityFramework.SqlServer.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Maciek\Desktop\Translate\obj\Debug\Translate.csprojAssemblyReference.cache
+C:\Users\Maciek\Desktop\Translate\obj\Debug\Translate.Migrations.Initial.resources
+C:\Users\Maciek\Desktop\Translate\obj\Debug\Translate.csproj.GenerateResource.cache
+C:\Users\Maciek\Desktop\Translate\obj\Debug\Translate.csproj.CopyComplete
+C:\Users\Maciek\Desktop\Translate\obj\Debug\Translate.dll
+C:\Users\Maciek\Desktop\Translate\obj\Debug\Translate.pdb
+C:\Users\Maciek\Desktop\Translate\bin\pl\System.Web.Helpers.resources.dll
+C:\Users\Maciek\Desktop\Translate\bin\pl\System.Web.Mvc.resources.dll
+C:\Users\Maciek\Desktop\Translate\bin\pl\System.Web.Razor.resources.dll
+C:\Users\Maciek\Desktop\Translate\bin\pl\System.Web.WebPages.resources.dll
+C:\Users\Maciek\Desktop\Translate\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Maciek\Desktop\Translate\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\Users\Maciek\Desktop\Translate\obj\Debug\Translate.Migrations.Removedsomeunneededfields.resources
+C:\Users\Maciek\Desktop\Translate\bin\Autofac.dll
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Maciek\Desktop\Translate\bin\Autofac.pdb
+C:\Users\Maciek\Desktop\Translate\bin\Autofac.xml
+C:\Users\Maciek\Desktop\Translate\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Maciek\Desktop\Translate\bin\Autofac.Integration.Mvc.dll
+C:\Users\Maciek\Desktop\Translate\bin\Autofac.Integration.Mvc.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\obj\Debug\Translate.csprojAssemblyReference.cache
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\obj\Debug\Translate.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\obj\Debug\Translate.pdb
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Translate.dll.config
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Translate.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Translate.pdb
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\csc.exe
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\csc.exe.config
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\csc.rsp
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\csi.exe
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\csi.exe.config
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\csi.rsp
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.AppContext.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Console.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.IO.Compression.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Security.Claims.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.ValueTuple.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\vbc.exe
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\vbc.exe.config
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\vbc.rsp
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\VBCSCompiler.exe
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Antlr3.Runtime.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Autofac.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Autofac.Integration.Mvc.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\EntityFramework.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\EntityFramework.SqlServer.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNet.WebHooks.Common.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Configuration.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Logging.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Options.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Newtonsoft.Json.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Owin.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Buffers.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.ComponentModel.Annotations.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.IO.Pipelines.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Memory.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Net.Http.Formatting.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Numerics.Vectors.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.Helpers.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.Http.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.Mvc.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.Optimization.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.Razor.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.WebPages.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.WebPages.Razor.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\WebGrease.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Autofac.pdb
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Autofac.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Autofac.Integration.Mvc.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNet.WebHooks.Common.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNetCore.Cryptography.KeyDerivation.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Configuration.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Configuration.Binder.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Identity.Core.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Logging.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Options.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Newtonsoft.Json.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Buffers.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.IO.Pipelines.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Memory.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Net.Http.Formatting.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Numerics.Vectors.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.Http.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.Helpers.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.Mvc.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.Optimization.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.Razor.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.WebPages.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\System.Web.WebPages.Razor.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Antlr3.Runtime.pdb
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\EntityFramework.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\EntityFramework.SqlServer.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\pl\System.Web.Helpers.resources.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\pl\System.Web.Mvc.resources.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\pl\System.Web.Razor.resources.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\pl\System.Web.WebPages.resources.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\pl\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\bin\pl\System.Web.WebPages.Razor.resources.dll
+C:\Users\Maciek\Desktop\Translate-próba implementacji repozytorium oraz kontenera\obj\Debug\Translate.csproj.CopyComplete

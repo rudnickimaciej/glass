@@ -2,11 +2,28 @@
 
 
 
+#### 
+ -system głosowania 
+  - poprawić zmiane koloru 
+  - natychmiastowa inkrementacja, dekrementacja
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ####FUNKCJE PODSTAWOWE 
  
  - Głosowanie na odpowiedź asynchronicznie - spróbować implementacji za pomocą SignalR.
-
- - Ogarnąć TimeAgo 
   - Dodawanie pytań  i odpowiedzi - coś się psuje, debugować z włączoną bazą.
 
  - Zmienic Username na scecyficzny

@@ -1,0 +1,192 @@
+﻿
+@model Translate.ViewModels.Complex.RankingViewModel
+
+@{
+    Layout = "~/Views/Ranking/_Layout.cshtml";
+}
+@Html.Partial("~/Views/Ranking/_RankingHeader.cshtml",new ViewDataDictionary { { "usersCount", Model.Users.Count() } })
+
+<div class="container-fluid mt--7  main-container">
+    <!-- Page content -->
+    <div class="row m-md-12">
+        <div class="col col-sm-12 col-md-12 col-lg-8">
+            <div class="card shadow">
+                <div class="card-header border-0" style="">
+                    <div class="row" style="
+    /* flex-direction: row-reverse; */">
+                        <div class="col-xl-6 col-lg-6">
+                            <h1> Ranking</h1>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6" style="">
+                            <div class="card card-stats mb-4 mb-xl-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Zarejestrowanych użytkowników</h5>
+                                            <span class="h2 font-weight-bold mb-0">@Model.Pagination.Count</span>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Pozycja</th>
+                                <th scope="col">Punkty</th>
+                                <th scope="col">Użytkownik</th>
+                                <th scope="col">Ilość tłumaczeń</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+
+
+
+                            @if (Model.Users.Any())
+                            {
+
+
+
+                                foreach (var user in Model.Users)
+                                {
+                            <tr>
+
+
+                                <th scope="row">
+                                    <div class="media align-items-center">
+
+                                        <div class="media-body">
+                                            <span> 1</span>
+                                        </div>
+                                    </div>
+                                </th>
+
+
+                                <td>
+
+                                    <span class="badge-dot mr-1">
+
+                                        
+
+                                            @user.UserPoints
+                                        </span>
+                                   
+
+                                </td>
+                                <td>
+                                    <div class="media-body">
+                                        <a href="/users/@user.Username" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="@user.Username">
+                                            <img alt="Image placeholder" src="~/Content/wwwroot/img/theme/team-1-800x800.jpg" class="rounded-circle">
+
+                                        </a> 
+                                        <span class="mb-0 text-sm">
+                                            <a href='/users/@user.UserId'>
+                                                @user.Username
+                                            </a>
+                                        </span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="media-body">
+                                        <span> @user.UserAnswers.Count()</span>
+
+                                    </div>
+                                </td>
+
+                                <td class="text-right">
+                                   
+                                    <div class="dropdown">
+                                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                            <a class="dropdown-item" href="/users/@user.Username">Zobacz profil</a>
+                                            <a class="dropdown-item" href="#">Napisz wiadomość</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                                }
+
+
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td>
+                                        <h1>Nikt się jeszcze nie zarejestrował</h1>
+                                    </td>
+                                </tr>
+
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                @Html.Partial("_Pagination", Model.Pagination)
+            </div>
+        </div>
+        <div class="col">
+            <div class="card shadow">
+               
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Najnowsze wpisy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        @foreach(var q in Model.NewQuestions)
+                        {
+
+                            <tr>
+                                <th scope="row">
+                                    <div class="media align-items-center">
+
+                                        <div class="media-body">
+                                            <a href="/questions/@q.Id"> @q.ShortContent(44)...</a>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <span> Dodano @q.DateFormat przez <a href='"/users/"@q.AuthorName'>@q.AuthorName</a> </span>
+                                    </div>
+                                </th>
+
+                            </tr>
+                        }
+
+
+
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("_Footer")
+</div>

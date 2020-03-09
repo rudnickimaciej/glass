@@ -35,10 +35,9 @@ namespace Translate.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("Translate.Dev", throwIfV1Schema: false)
+            : base("Translate.Deployment2", throwIfV1Schema: false)
         {
         }
-        public DbSet<Language> Languages { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
         public DbSet<Vote> Votes { get; set; }

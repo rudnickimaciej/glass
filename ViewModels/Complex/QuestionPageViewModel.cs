@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Translate.Models.Domain;
 using Translate.ViewModels.Components;
 
 
@@ -13,6 +14,6 @@ namespace Translate.ViewModels.Complex
         public IEnumerable<AnswerViewModel> Answers { get; set; }
         public bool IsAdmin { get; set; }
         public string ActiveUserId { get; set; }
-
+        public Dictionary<int,VoteType> VotesDictionary { get; set; }  
     }
 }

@@ -1,44 +1,86 @@
 ﻿@model Translate.ViewModels.RegisterViewModel
 
-<div class="container body-content">
-    <div class="row sectionHeader">
-        <div class="sectionHeading">
-            Register
-        </div>
-        <div class="sectionDescription">
-            <p>Create an account to post in the forums.</p>
-        </div>
-    </div>
-    <div class="row" id="registerContent">
-        <div id="registerFormWrapper">
+<!-- Page content -->
+<div class="container mt--8 pb-5">
+    <!-- Page content -->
+    <!-- Table -->
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <div class="card bg-secondary shadow border-0">
+                <div class="card-header bg-transparent pb-5">
+                    <div class="text-muted text-center mt-2 mb-3">Rejestracja</div>
 
-            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", id = "registerForm", role = "form" }))
-            {
-                @Html.AntiForgeryToken();
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                    </div>
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                    </div>
+                <div class="card-body px-lg-5 py-lg-5">
+                    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "register-form", id = "register-form", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken();
+                        <div class="form-group">
+                            <div class="input-group input-group-alternative mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                </div>
+                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", id = "", placeholder = "Nazwa użytkownika", type = "text" })
+
+                            </div>
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "invalid-feedback field-validation-valid", style = "display: block" })
+                        </div>
+
+                        <div class="form-group focused">
+                            <div class="input-group input-group-alternative mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                </div>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control valid", id = "", placeholder = "Email", type = "email" })
+
+                            </div>
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "invalid-feedback field-validation-valid", style = "display: block" })
+
+                        </div>
+
+                        <div class="form-group focused">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                </div>
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control valid", placeholder = "Hasło",type = "password" })
+
+
+                            </div>
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "invalid-feedback field-validation-valid", style = "display: block" })
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                </div>
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control",placeholder = "Powtórz hasło", type = "password" })
+
+                            </div>
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "invalid-feedback field-validation-valid", style = "display: block" })
+
+                        </div>
+
+                        @*<div class="row my-4">
+                            <div class="col-12">
+                                <div class="custom-control custom-control-alternative custom-checkbox">
+                                    <input class="custom-control-input" id="customCheckRegister" type="checkbox" required="" data-val="true" data-val-required="The AcceptPrivacyPolicy field is required." name="Input.AcceptPrivacyPolicy" value="true">
+                                    <label class="custom-control-label" for="customCheckRegister">
+                                        <span class="text-muted">I agree with the <a href="/privacy" target="_blank">Privacy Policy</a></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>*@
+                        <div class="text-center">
+                            <button class="btn btn-primary mt-4" type="submit">Create account</button>
+                        </div>
+                    }
+                  
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" id="registerBtn" class="btn btn-lg btn-success" value="Zarejestruj" />
-                    </div>
-                </div>
-                }
+            </div>
         </div>
     </div>
+
 </div>

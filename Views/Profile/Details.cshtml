@@ -1,93 +1,184 @@
 ﻿@using Microsoft.AspNet.Identity
 @model Translate.ViewModels.Components.ProfileViewModel
 
+@{
+    ViewData["Title"] = "PROFIL UŻYTKOWNIKA";
+}
 
 
-    @{
-        //var user = UserManager.FindByNameAsync(User.Identity.Name);
-        //var isAdmin = user.Result.IsAdmin;
-    }
 
-    <div class="container body-content">
-        <div class="row sectionHeader">
-            <div class="sectionHeading noBorder">
-                @Model.Username
-            </div>
-            @if (User.IsInRole("Admin"))
-            {
-                <form method="post" asp-controller="Profile" asp-action="Deactivate" asp-route-id="@Model.UserId">
-                    <div>
-                        <button class="btn btn-danger" active="@Model.IsActive">Deactivate User</button>
+
+
+<div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+        <div class="card card-profile shadow">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 order-lg-2">
+                    <div class="card-profile-image">
+                        <a href="#">
+                            <img src="~/Content/wwwroot/img/theme/team-4-800x800.jpg" class="rounded-circle">
+                        </a>
                     </div>
-                </form>
-            }
-            </div>
-            <div class="row userProfile">
-                <div class="col-md-2">
-                    <div id="userProfileImage" ></div>
-                    @*@if (Context.User.Identity.Name == Model.Username)
-                    {*@
-                        <form method="post" enctype="multipart/form-data" asp-controller="Profile" asp-action="UploadProfileImage">
-                            <div id="upload">
-                                <label class="btn btn-info btn-file">
-                                    Przeglądaj  <input type="file" name="file" style="display: none;">
-                                </label>
-                            </div>
-                            <button type="submit" id="btn-profile" disabled class="btn btn-success">Zmień zdjęcie</button>
-                        </form>
-                    @*}*@
                 </div>
-                <div class="col-md-2">
-                    <span id="userName">@Model.Username</span>
-                    @if (@Model.IsAdmin)
-                    {
-                        <span class="isAdmin">Admin</span>
-                    }
-                    <span id="userRating">Punkty tłumaczeń: @Model.UserPoints</span>
-                    <span id="userEmailLabel">Email: @Model.Email</span>
-                    <span id="userCreatedLabel">Dołączył @Model.MemberSince</span>
-                    <span id="userActiveLabel">
-                        @if (!@Model.IsActive)
+            </div>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+                <div class="d-flex justify-content-between">
+                    @*<a href="#" class="btn btn-sm btn-info mr-4">@Model.Username</a>
+                    <a href="#" class="btn btn-sm btn-default float-right">Message</a>*@
+                </div>
+            </div>
+            <div class="card-body pt-0 pt-md-4">
+                <div class="row">
+                    <div class="col">
+                        <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                            <div>
+                                <span class="heading">@Model.UserPoints</span>
+                                <span class="description">Punkty</span>
+                            </div>
+                            <div>
+                                <span class="heading">10</span>
+                                <span class="description">Ranking</span>
+                            </div>
+                            <div>
+                                <span class="heading">@Model.UserAnswers.Count()</span>
+                                <span class="description">Odpowiedzi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3>
+                        <!--if (SignInManager.IsSignedIn(User))
                         {
-                            <span class="inactiveUser">Nieaktywny</span>
+                            User.GetFullNameOrEmail()
                         }
                         else
-                        {
-                            <span class="activeUser">Aktywny</span>
-                        }
-                    </span>
-                    @if( true @*Model.UserId == User.Identity.GetUserId()*@)
-                    {
-                    <span>
-                        @Html.ActionLink("Zmień hasło", "ChangePassword", "Manage")
-                    </span>
+                        {-->
 
-                    }
+                        <span>@Model.Username</span>
 
-                </div>
-                <div class="col-md-8 profileDescription">
-                    <span>
-                        @Model.Description Lorem Ipsum is simply dummy text of the
-                        printing and typesetting industry. Lorem Ipsum has been the industry's
-                        standard dummy text ever since the 1500s, when an unknown printer took
-                        a galley of type and scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into electronic typesetting,
-                        remaining essentially unchanged. It was popularised in the 1960s with the release of
-                        Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                        software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </span>
-                    @if (true@*Model.UserId == User.Identity.GetUserId()*@)
-                    {
-                        <p>
-                            @Html.ActionLink("Zmień opis", "ChangePassword")
-                        </p>
-                    }
-
+                        <span class="font-weight-light"></span>
+                    </h3>
+                    @*<div class="h5 font-weight-300">
+                        <i class="ni location_pin mr-2"></i>Warszawa, Polska
+                    </div>*@
+                    @*<div class="h5 mt-4">
+                        <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+                    </div>
+                    <div>
+                        <i class="ni education_hat mr-2"></i>University of Computer Science
+                    </div>
+                    <hr class="my-4" />
+                    <p>Maciek — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.</p>
+                    <a href="#">Edytuj opis</a>*@
                 </div>
             </div>
-
+        </div>
     </div>
+    <div class="col-xl-8 order-xl-1">
+        <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h3 class="mb-0"> Pytania  <span class="btn btn-sm btn-info mr-4">@Model.UserQuestions.Count() </span></h3>
+                    </div>
+                    <div class="col-4 text-right">
+                        @*<a href="#!" class="btn btn-sm btn-primary"></a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                @if (Model.UserQuestions.Count() > 0)
+                {
+                    foreach (var q in Model.UserQuestions)
+                    {
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <span>
 
-<div>
-    <h1 style="color:green"> @ViewBag.StatusMessage</h1>
+                                    @if (q.Content.Length > 59)
+                                    {
+                                        <a href="/questions/@q.Id">
+
+                                            @q.Content.Substring(0, 60)...
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="/questions/@q.Id">
+                                            @q.Content
+                                        </a>
+                                    }
+
+                                </span>
+                                <span> @q.AnswersCount odpowiedzi</span>
+                                <p> dodane @q.DatePosted.ToString("MM/dd/yyyy H:mm")</p>
+
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <span> Użytkownik nie dodał jeszcze żadnego pytania.</span>
+                        </div>
+                    </div>
+                }
+            </div> 
+            <div class="card-header bg-white border-0">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h3 class="mb-0"> Tłumaczenia  <span class="btn btn-sm btn-info mr-4">@Model.UserAnswers.Count() </span></h3>
+                    </div>
+                    <div class="col-4 text-right">
+                        @*<a href="#!" class="btn btn-sm btn-primary"></a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+
+                @if (Model.UserAnswers.Count() > 0)
+                {
+                    foreach (var a in Model.UserAnswers)
+                    {
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <span>
+
+                                    @if (a.Content.Length > 59)
+                                    {
+                                        <a href="/questions/@a.QuestiondId">
+                                            @a.Content.Substring(0, 60)...
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="/questions/@a.QuestiondId">
+                                            @a.Content
+                                        </a>
+                                    }
+
+                                </span>
+                                <p> dodane @a.Created.ToString("MM/dd/yyyy H:mm")</p>
+
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="row">
+                        <div class="col-lg-12">
+                           <span> Użytkownik nie dodał jeszcze żadnego tłumaczenia.</span>
+                        </div>
+                    </div>
+                }
+            </div>
+
+
+        </div>
+            </div>
+    </div>
 </div>

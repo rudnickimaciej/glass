@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Owin;
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(Translate.Startup))]
@@ -10,5 +11,7 @@ namespace Translate
         {
             ConfigureAuth(app);
         }
+
+         
     }
 }

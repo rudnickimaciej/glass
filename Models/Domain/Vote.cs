@@ -8,7 +8,8 @@ namespace Translate.Models.Domain
    public enum VoteType
     {
         Positive=1,
-        Negative=-1
+        Negative=-1,
+        Clear =0
     }
     public class Vote
     {

@@ -36,6 +36,13 @@ namespace Translate.Models.Services
             throw new NotImplementedException();
         }
 
+        public IEnumerable<ApplicationUser> GetUsers(int page, int pageSize)
+        {
+            return _context.Users.OrderBy(u=>u.Rating).Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
+        }
+
+
         public async Task SetProfileImage(string id, Uri uri)
         {
             var user = GetById(id);

@@ -1,0 +1,33 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("_PageHeadElement")
+
+
+    @RenderSection("Styles", required: false)
+    @RenderSection("HeadScripts", required: false)
+</head>
+<body class="bg-default">
+    <partial name="_GoogleTagManagerBodyElement" />
+
+    <div class="main-content">
+        @Html.Partial("_Navbar")
+        @Html.Partial("_Header")
+
+
+        <!-- Page content -->
+        <div class="container mt--8 pb-5">
+            <!-- Page content -->
+            @RenderBody()
+        </div>
+        @Html.Partial("_Footer")
+
+    </div>
+
+    @Html.Partial("_ThemeScripts")
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

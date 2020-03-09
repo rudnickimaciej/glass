@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Translate.Models.Domain;
 using Translate.Models.Services;
+using Translate.ViewModels.Builders;
 
 namespace Translate.Controllers
 {
@@ -14,6 +15,10 @@ namespace Translate.Controllers
 
         protected readonly IVoteService _voteService = new VoteService();
 
+        public VoteController(IApplicationUser userService, IForum forumService, IViewModelBuilder builder) : base(userService, forumService, builder)
+        {
+        }
+
         class VoteResult
         {
             public int Points { get; set; }
@@ -21,18 +26,35 @@ namespace Translate.Controllers
 
         public  JsonResult Vote(int value, int answer_id, string user_id )
         {
+            if (value == 0)
+            {
+                //it means the client unclicked the button and the vote object must be deleted from db
+                _uow.Votes.Remove(answer_id, user_id);
+                _uow.SaveChanges();
+                VoteResult res = new VoteResult()
+                {
+                    Points = _uow.Votes.GetPoints(answer_id)
+                };
+
+                return Json(res, JsonRequestBehavior.AllowGet);
+            }
+            
             VoteType voteType;
             if (value == 1)
                 voteType = VoteType.Positive;
             else 
                 voteType = VoteType.Negative;
-            
-            int points=_voteService.Vote(new Vote()
+
+
+           _uow.Votes.Add(new Vote()
             {
                 VoteType = voteType,
-                User = _userService.GetById(user_id),
-                Answer = _forumService.GetAnswerById(answer_id)
-            });
+                User = _uow.Users.Get(user_id),
+                Answer = _uow.Answers.Get(answer_id)
+            }) ;;
+            _uow.SaveChanges();
+
+            int points = _uow.Votes.GetPoints(answer_id);
 
             VoteResult result = new VoteResult()
             {

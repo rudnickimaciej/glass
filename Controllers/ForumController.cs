@@ -12,64 +12,112 @@ using Microsoft.AspNet.Identity;
 using Newtonsoft.Json;
 using Translate.ViewModels.Builders;
 using Microsoft.AspNetCore.Identity;
-
+using Translate.ViewModels.Components.Pagination;
+using Translate.Models.Domain;
 
 namespace Translate.Controllers
 {
     public class ForumController : BaseController
     {
 
+        private const int QUESTIONS_PER_PAGE = 5;
+        private const int USERS_PER_PAGE = 6;
 
-        public ActionResult Questions(string searchQuery, string langFrom="", string langTo="")
+        public ForumController(IApplicationUser userService, IForum forumService, IViewModelBuilder builder) : base(userService, forumService,builder)
         {
-            var questions = _forumService.GetQuestions(langFrom, langTo).ToList();
-            if(searchQuery!=null)
-            {
-                questions.RemoveAll(q => !q.Title.Contains(searchQuery));
-            }        
-            var questionListing = questions.Select(q => _builder.BuildQuestion(q)).ToList();
-     
-            var model = new AllQuestionsOfForumViewModel
-                {
-                    Questions = questionListing,
-
-                };
-                return View("Questions", model);
-
-         
         }
-    
+
+
+        public ActionResult Questions(string searchQuery, int page =1)
+        {
+            int allQuestionsInDatabaseCount;
+            int todayQuestionsCount;
+            int allQuestionsMatchingQueryCount;
+            List<Question> questions;
+        
+                allQuestionsInDatabaseCount = _uow.Questions.GetCount();
+                todayQuestionsCount = 888;
+                allQuestionsMatchingQueryCount = _uow.Questions.GetAllQuestionsMatchingQueryCount(searchQuery);
+                questions = _uow.Questions.GetQuestionsWithPagination(searchQuery, page, QUESTIONS_PER_PAGE).ToList();
+
+            
+
+            // int todayQuestionsCount = _forumService.GetTodayQuestionsCunt();
+
+
+            //var usersCount = _userService.GetAllUsersCount();
+            var usersCount = _uow.Users.GetAll().Count();
+
+
+            //If user passes too hight page number, then redirect to first page
+            int pages = allQuestionsMatchingQueryCount / QUESTIONS_PER_PAGE;
+            int remainingQuestions = allQuestionsMatchingQueryCount % QUESTIONS_PER_PAGE;
+
+            if (remainingQuestions > 0)
+                pages++;
+
+            if (page > pages && allQuestionsInDatabaseCount!=0)
+            {
+                return RedirectToAction("Questions", "Forum",new { page = 1 });
+            }
+        
+
+            var questionListing = questions.Select(q => _builder.BuildQuestion(q)).ToList();
+
+            var model = new AllQuestionsOfForumViewModel
+            {
+                Questions = questionListing,
+                QuestionsMatchingQueryCount = allQuestionsMatchingQueryCount,
+                Statistics = new StatisticsViewModel
+                {
+                    QuestionsCount = allQuestionsInDatabaseCount,
+                    ThisWeekQuestionsCount = todayQuestionsCount
+
+                },
+                Pagination = new PaginationModel()
+                {
+                    Count = allQuestionsMatchingQueryCount,
+                    CurrentPage = page,
+                    PageSize = QUESTIONS_PER_PAGE,
+                    Url = "questions/"
+                }, 
+                TopAnswers = _uow.Answers.GetTop(5).Select(a => _builder.BuildAnswer(a))
+            };
+            return View("~/Views/Home/Index.cshtml", model);
+        }
+
         /// <summary>
         /// Returns one specific Question.
         /// </summary>
         /// <param name="questionId"></param>
         /// <returns></returns>
-        public ActionResult Question(string langFrom, string langTo, int questionId)
+        public ActionResult Question(int questionId)
         {
-            var question = _forumService.GetQuestion(questionId);
+            var question = _uow.Questions.Get(questionId);
+            var userVotes = _uow.Votes.GetUserVotes(User.Identity.GetUserId(), question.Id);
+
+            Dictionary<int, VoteType> voteDict = new Dictionary<int, VoteType>();
+            userVotes.ToList().ForEach(v => voteDict.Add(v.Answer.Id, v.VoteType.Equals(VoteType.Positive) ? VoteType.Positive : VoteType.Negative));
 
             QuestionPageViewModel viewModel = new QuestionPageViewModel
             {
                 Question = _builder.BuildQuestion(question),
                 Answers = question.Answers.OrderByDescending(a=>a.Points).Select(a => _builder.BuildAnswer(a)),
                 IsAdmin = UserHelper.IsAuthorAdmin(question.User),
-                ActiveUserId = User.Identity.GetUserId()
-             };
+                ActiveUserId = User.Identity.GetUserId(),
+                VotesDictionary = voteDict
+            };
 
             if (viewModel.ActiveUserId == null)
                 viewModel.ActiveUserId = string.Empty;
-            return View("Question",viewModel);
+            return View("~/Views/Question/Question.cshtml", viewModel);
         }
 
 
         
-        /// <summary>
-        /// Returns AddQuestion Page with forms to fill and button to submit new question.
-        /// </summary>
-        /// <param name="forumId"></param>
-        /// <returns></returns>
-        /// 
 
+
+        //GET: questions/add
         [Authorize]
         public ActionResult AddQuestion()
         {
@@ -82,7 +130,7 @@ namespace Translate.Controllers
             };
 
 
-            return View("AddQuestion", model);
+            return View("~/Views/Question/AddQuestion.cshtml", model);
         }
 
 
@@ -97,17 +145,17 @@ namespace Translate.Controllers
             var userId = User.Identity.GetUserId();
             var question = new Question
             {
-                Id=-1,
-                User=_userService.GetById(userId),
-                Title = model.Title,
+                Id = -1,
+                User = _uow.Users.Get(userId),
                 Content = model.Content,
-                Created = DateTime.Now,
-                LanguageFrom=_forumService.GetLanguage(model.LanguageFrom),
-                LanguageTo = _forumService.GetLanguage(model.LanguageTo)
+                Created = DateTime.Now
             };
 
-           var addedQuestion=_forumService.AddQuestion(question);
-            return RedirectToAction("Question", new { langFrom = model.LanguageFrom, langTo = model.LanguageTo,questionId = addedQuestion.Id});
+            
+             var addedQuestion = _uow.Questions.Add(question);
+            _uow.SaveChanges();
+            
+            return RedirectToAction("Question",new { questionId = question.Id });
         }
 
         public ActionResult EditQuestion(string langFrom, string langTo, int questionId)
@@ -116,10 +164,7 @@ namespace Translate.Controllers
            var model =  new EditQuestionViewModel
             { 
                 Id = question.Id,
-                Title = question.Title,
-                Content = question.Content,
-                LanguageFrom = question.LanguageFrom.Abbreviation,
-                LanguageTo = question.LanguageTo.Abbreviation          
+                Content = question.Content     
             };
 
             return View(model);
@@ -132,12 +177,11 @@ namespace Translate.Controllers
             {
                 Id = editedQuestion.Id,
                 Content = editedQuestion.Content,
-                Title = editedQuestion.Title,
-                LanguageFrom = editedQuestion.LanguageFrom,
-                LanguageTo = editedQuestion.LanguageTo
+                Title = editedQuestion.Title
+
             });
 
-            return RedirectToAction("Question", new { langFrom = editedQuestion.LanguageFrom, langTo = editedQuestion.LanguageTo, questionId = editedQuestion.Id });
+            return RedirectToAction("Question", new { questionId = editedQuestion.Id });
         }
 
         //POST: forum/deletequestion
@@ -148,23 +192,22 @@ namespace Translate.Controllers
         }
 
         [Authorize]
-        public ActionResult CreateAnswer(string langFrom, string langTo,int questionId)
+        public ActionResult CreateAnswer(int questionId)
         {
             
             var userId= User.Identity.GetUserId();
-            var user=_userService.GetById(userId);
+            var user=_uow.Users.Get(userId);
 
-            var question = _forumService.GetQuestion(questionId);
+            var question =_uow.Questions.Get(questionId);
             var model = _builder.BuildReplyViewModel(question, user);
 
-            return View("AddAnswer",model);
+            return View("~/Views/Question/AddAnswer.cshtml", model);
         }
 
         public ActionResult AddAnswer(ReplyViewModel model)
         {
-            var question = _forumService.GetQuestion(model.QuestionId);
-            var langFrom = question.LanguageFrom;
-            var langTo = question.LanguageTo;
+            var question = _uow.Questions.Get(model.QuestionId);
+
 
             var answer = new Answer()
             {
@@ -173,9 +216,10 @@ namespace Translate.Controllers
                 Question = question           
                 //User = _userService.GetById(model.AuthorId)
             };
-            answer.User = _userService.GetById(model.AuthorId);
-            _forumService.AddAnswer(answer);
-            return RedirectToAction("Question", new { langFrom = langFrom.Abbreviation, langTo = langTo.Abbreviation, questionId = model.QuestionId });
+            answer.User = _uow.Users.Get(model.AuthorId);
+            _uow.Answers.Add(answer);
+            _uow.SaveChanges();
+            return RedirectToAction("Question", new {questionId = model.QuestionId });
         }
 
         //GET:forum/editanswer/{answerId}
@@ -197,18 +241,72 @@ namespace Translate.Controllers
         public ActionResult EditAnswer(EditAnswerViewModel model)
         {
             _forumService.EditAnswer(model.AnswerId, model.ReplyContent);
-            return RedirectToAction("Question", new { langFrom = model.LanguageFromAbbreviation, langTo = model.LanguageToAbbreviation, questionId = model.QuestionId });
+            return RedirectToAction("Question", new { questionId = model.QuestionId });
         }
 
         public ActionResult DeleteAnswer(int answerId)
         {
             var question = _forumService.GetAnswerById(answerId).Question;
             _forumService.DeleteAnswer(answerId);
-            return RedirectToAction("Question", new { langFrom = question.LanguageFrom.Abbreviation, langTo = question.LanguageTo.Abbreviation, questionId = question.Id });
+            return RedirectToAction("Question", new { questionId = question.Id });
         }
 
 
+        public ActionResult Ranking(int page = 1)
+        {
+            var allUsers = _uow.Users.GetAll().ToList();
+            allUsers.ForEach(u => u.Rating = _uow.Votes.GetPoints(u));
+            _uow.SaveChanges();
 
+            var newQuestions = _uow.Questions.GetNewQuestions(5);
+            var users = _uow.Users.GetUsers(page, USERS_PER_PAGE).ToList(); 
+        
+            users.ForEach(u => u.Rating = _uow.Votes.GetPoints(u));
+            users.OrderBy(u => u.Rating);
+            int allUsersCount = _uow.Users.GetCount();
+
+            int pages = allUsersCount / USERS_PER_PAGE;
+            int remainingUsers = allUsersCount % USERS_PER_PAGE;
+
+            if (remainingUsers > 0)
+                pages++;
+
+            if (page > pages)
+            {
+                return RedirectToAction("Ranking", "Forum", new { page = 1 });
+            }
+
+
+            RankingViewModel model = new RankingViewModel
+            {
+                Users = users.Select(user => new ProfileViewModel()
+                {
+                    UserId = user.Id,
+                    Username = user.UserName,
+                    Description = user.Description,
+                    Email = user.Email,
+                    MemberSince = user.MemberSince,
+                    ProfileImageUrl = user.ProfileImageUrl,
+                    UserPoints = user.Rating,
+                    IsActive = user.IsActive,
+                    UserQuestions = _uow.Questions.Find(q => q.User.Id == user.Id).Select(q => _builder.BuildQuestion(q)),
+                    UserAnswers = _uow.Answers.Find(a => a.User.Id == user.Id).Select(a => _builder.BuildAnswer(a))
+
+                }),
+                NewQuestions = newQuestions.Select(q => _builder.BuildQuestion(q)),
+
+                Pagination = new PaginationModel()
+                {
+                    Count= allUsersCount,
+                    CurrentPage= page,
+                    PageSize= USERS_PER_PAGE,
+                    Url="ranking/"
+                }
+
+            };
+
+            return View("~/Views/Ranking/Ranking.cshtml", model);
+        }
 
         #region helper Methods
 

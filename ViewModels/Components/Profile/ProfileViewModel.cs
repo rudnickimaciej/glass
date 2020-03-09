@@ -17,8 +17,12 @@ namespace Translate.ViewModels.Components
         public bool IsAdmin { get; set; }
         public bool IsActive { get; set; }
 
-
+        
         public DateTime? MemberSince { get; set; }
         public IFormFile ImageUpload { get; set; }
+
+        public IEnumerable<QuestionViewModel> UserQuestions{ get; set; }
+        public IEnumerable<AnswerViewModel> UserAnswers{ get; set; }
+        public int UserAnswersCount { get; set; }
     }
 }

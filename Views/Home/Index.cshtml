@@ -1,39 +1,192 @@
-﻿@model Translate.ViewModels.Complex.HomeIndexViewModel
+﻿@model Translate.ViewModels.Complex.AllQuestionsOfForumViewModel
+@{
+    Layout = "~/Views/Home/_Layout.cshtml";
+}
+@Html.Partial("~/Views/Home/_IndexHeader.cshtml", Model.Statistics)
+
+    <div class="container-fluid mt--7 main-container">
+        <!-- Page content -->
+        <div class="row">
+            <div class="col col-lg-8 col-md-12 col-sm-12">
+                <div class="card shadow">
+                    <div class="card-header border-0" style="">
+
+                        <div class="row" style="">
+                            <div class="col-xl-6 col-lg-6">
+                                <h1 class="mb-0">Pytania</h1>
+                            </div>
+
+                            <div class="col-xl-6 col-lg-6" style="">
+                                <div class="card card-stats mb-4 mb-xl-0">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h5 class="card-title text-uppercase text-muted mb-0">Wszystkich pytań</h5>
+                                                <span class="h2 font-weight-bold mb-0">@Model.Statistics.QuestionsCount</span>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                                                    <i class="fas fa-list"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Temat</th>
+                                    <th scope="col">Odpowiedzi</th>
+                                    <th scope="col">Autor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
 
-<div class="container body-content">
-    <div class="row frontPageSplash">
-        <div class="col-md-6 frontPageLearn">
-            <div class="frontPageHeading"> Poznawaj, tłumacz, ucz się języków</div>
-            <p class="frontPageSubHeading"> W Translate coś tam coś tam coś tam</p>
-            <div>
 
-                @using (Html.BeginForm("Search", "Forum", FormMethod.Post))
-                {              
-                    @Html.TextBoxFor(m => m.SearchQuery, new { @class = "homeSearch", placeholder = "Szukaj..." })
-                }
+
+
+                                @if (Model.Questions.Any())
+                                {
+
+
+
+                                    foreach (var question in Model.Questions)
+                                    {
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="media align-items-center">
+
+                                                    <div class="media-body">
+                                                        <span class="mb-0 text-sm"> <a href='/questions/@question.Id'> @question.ShortContent(66)...</a> </span>
+                                                    </div>
+
+                                                </div>
+                                                <div class="media-body">
+                                                    <span class="badge badge-dot mr-1">
+                                                        @question.DateFormat
+                                                    </span>
+                                                </div>
+                                            </th>
+
+                                            <td>
+                                                <div class="media align-items-center">
+                                                    <span class="align-items-center badge badge-dot mr-1">
+                                                        @question.AnswersCount
+                                                    </span>
+                                                </div>
+
+                                            </td>
+
+                                            <td>
+                                                <div class="avatar-group">
+                                                    <a href='users/@question.AuthorName' class="avatar avatar-sm" data-toggle="tooltip" data-original-title=@question.AuthorName>
+                                                        <img alt="Image placeholder" src="~/Content/wwwroot/img/theme/team-1-800x800.jpg" class="rounded-circle">
+                                                    </a>
+
+                                                </div>
+
+                                            </td>
+
+
+                                            @*<td class="text-right">
+                                            <div class="dropdown">
+                                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-ellipsis-v"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                                    <a class="dropdown-item" href="#">Action</a>
+                                                    <a class="dropdown-item" href="#">Another action</a>
+                                                    <a class="dropdown-item" href="#">Something else here</a>
+                                                </div>
+                                            </div>
+                                        </td>*@
+                                        </tr>
+
+                                    }
+
+
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td>
+                                            <h1> Nie znaleziono żadnych pytań</h1>
+                                        </td>
+                                    </tr>
+
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    @Html.Partial("_Pagination", Model.Pagination)
+                </div>
+            </div>
+            <br/>
+            <div class="col col-lg-4 col-md-12 col-sm-12">
+                <div class="card shadow">
+                   
+
+      
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Top tłumaczenia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+
+
+
+                                @if (Model.Questions.Any())
+                                {
+
+                                    foreach (var a in Model.TopAnswers)
+                                    {
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="media align-items-center">
+
+                                                    <div class="media-body">
+                                                        <span class="mb-0 text-sm"> <a href='/questions/@a.QuestiondId'> @a.ShortContent(40)...</a> </span>
+                                                    </div>
+
+                                                </div>
+                                                <div class="media-body">
+                                                    <span class=" badge-dot mr-1">
+                                                        dodano @a.DateFormat przez <a href="/users/@a.AuthorName"> @a.AuthorName</a>
+                                                    </span>
+                                                </div>
+                                            </th>
+
+                                   
+                                        </tr>
+
+                                    }
+
+                                }
+                      
+                            </tbody>
+                        </table>
+                    </div>
+
+            
+                </div>
             </div>
         </div>
 
-        <div class="col-md-6">
-
-        </div>
-        <div class="col-md-12">
-            @Html.Partial("_FilterHeader")
-        </div>
+        @Html.Partial("_Footer")
     </div>
 
-    <div class="row frontPageContent">
-        <h3 id="latestPosts"> Najnowsze pytania</h3>
-        <table class="table table-hover" id="latestPostsTable">
-            <tbody>
-                @foreach(var question in Model.LatestQuestions)
-                {
-                  @Html.Partial("_QuestionRecord",question)
-                }
-            </tbody>
-        </table> 
-
-    </div>
-
-</div>

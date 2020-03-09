@@ -11,8 +11,7 @@ namespace Translate.ViewModels.Components
         public int SpamReasonId { get; set; }
         public string SpamReasonContent { get; set; }
         public DateTime Created { get; set; }
-        public LanguageViewModel LanguageFrom { get; set; }
-        public LanguageViewModel LanguageTo { get; set; }
+
         public AnswerViewModel ReportedAnswer { get; set; }
         public int QuestionId { get; set; }
         public string ReportingUserId { get; set; }
