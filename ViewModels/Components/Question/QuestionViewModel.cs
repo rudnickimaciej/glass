@@ -28,7 +28,7 @@ namespace Translate.ViewModels.Components
         public DateTime DatePosted { get; set; }
         public string DateFormat
         {
-            get { return DatePosted.ToString("MM/dd/yyyy HH:mm"); }
+            get { return DatePosted.ToString("dd/MM/yyyy HH:mm"); }
             private set { }
         }
         public int AnswersCount { get; set; }

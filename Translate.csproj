@@ -293,6 +293,7 @@
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="ViewModels\Builders\IViewModelBuilder.cs" />
+    <Compile Include="ViewModels\Builders\ToTimeSinceString.cs" />
     <Compile Include="ViewModels\Builders\UserHelper.cs" />
     <Compile Include="ViewModels\Builders\ViewModelBuilders.cs" />
     <Compile Include="ViewModels\Complex\AddQuestionViewModel.cs" />

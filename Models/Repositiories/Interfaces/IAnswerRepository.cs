@@ -11,5 +11,6 @@ namespace Translate.Models.Repositiories
     {
 
          IEnumerable<Answer> GetTop(int count);
+        int GetCount(string userId);
     }
 }

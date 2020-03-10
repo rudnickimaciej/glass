@@ -48,7 +48,7 @@
                                 <th scope="col" class="cnt">Pozycja</th>
                                 <th scope="col" class="cnt">Punkty</th>
                                 <th scope="col" class="cnt">Użytkownik</th>
-                                <th scope="col"class="cnt">Ilość tłumaczeń</th>
+                                <th scope="col"class="">Statystyki</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
@@ -72,7 +72,7 @@
                                     <div class="media align-items-center">
 
                                         <div class="media-body">
-                                            <span>@position @{position++;}</span>
+                                            <span style="font-size:1.5rem">@position @{position++;}</span>
                                         </div>
                                     </div>
                                 </th>
@@ -80,35 +80,39 @@
 
                                 <td class="cnt">
 
+                                    <span class="badge badge-lg badge-primary">@user.UserPoints pkt</span>
+
+                              </td>
+
+                    <td class="cnt">
+
                                     <span class="badge-dot mr-1">
 
-                                        
+                                        <a href="/users/@user.Username" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="@user.Username">
+                                            <img alt="Image placeholder" src="~/Content/wwwroot/img/theme/team-1-800x800.jpg" class="rounded-circle">
+                                        </a>   
+                                        <p class="mb-0 text-sm">
+                                            <a href='/users/@user.Username'>
+                                                @user.Username
+                                            </a>
+                                        </p>
+                                    </span>
 
-                                            @user.UserPoints
-                                        </span>
-                                   
+
 
                                 </td>
                                 <td >
                                     <div class="media-body">
-                                        <a href="/users/@user.Username" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="@user.Username">
-                                            <img alt="Image placeholder" src="~/Content/wwwroot/img/theme/team-1-800x800.jpg" class="rounded-circle">
-
-                                        </a> 
-                                        <span class="mb-0 text-sm">
-                                            <a href='/users/@user.UserId'>
-                                                @user.Username
-                                            </a>
-                                        </span>
+                                     
+                                        <div class="media-body">
+                                            <div> tłumaczenia: @user.UserAnswersCount </div>
+                                            <div> pytania: @user.UserQuestions.Count()</div>
+                                            <div> dołączył: @DateTime.Today.ToString("dd-MM-yy") </div>
+                                        </div>
                                     </div>
                                 </td>
 
-                                <td class="cnt">
-                                    <div class="media-body">
-                                        <span> @user.UserAnswers.Count()</span>
-
-                                    </div>
-                                </td>
+                             
 
                                 <td class="text-right">
                                    

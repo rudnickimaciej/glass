@@ -35,9 +35,9 @@ namespace Translate.Repositories
         public IList<Question> GetQuestionsWithPagination(string searchQuery, int page, int questionsPerPage)
         {
             if (searchQuery != null)
-                return Context.Questions.Where(q => q.Content.Contains(searchQuery)).OrderBy(q => q.Created).Skip((page - 1) * questionsPerPage).Take(questionsPerPage).ToList();
+                return Context.Questions.Where(q => q.Content.Contains(searchQuery)).OrderByDescending(q => q.Created).Skip((page - 1) * questionsPerPage).Take(questionsPerPage).ToList();
             else
-                return Context.Questions.OrderBy(q => q.Created).Skip((page - 1) * questionsPerPage).Take(questionsPerPage).ToList();
+                return Context.Questions.OrderByDescending(q => q.Created).Skip((page - 1) * questionsPerPage).Take(questionsPerPage).ToList();
         }
         public ApplicationDbContext Context
         {

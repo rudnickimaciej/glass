@@ -20,6 +20,11 @@ namespace Translate.Models.Repositiories
             return Context.Answers.OrderBy(a => a.Created).Take(count);
         }
 
+        public int GetCount(string userId)
+        {
+            return Context.Answers.Where(a => a.User.Id == userId).Count();
+        }
+        
         public ApplicationDbContext Context
         {
             get { return _context as ApplicationDbContext; }

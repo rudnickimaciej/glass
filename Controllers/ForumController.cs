@@ -290,6 +290,7 @@ namespace Translate.Controllers
                     UserPoints = user.Rating,
                     IsActive = user.IsActive,
                     UserQuestions = _uow.Questions.Find(q => q.User.Id == user.Id).Select(q => _builder.BuildQuestion(q)),
+                    UserAnswersCount=_uow.Answers.GetCount(user.Id),
                     UserAnswers = _uow.Answers.Find(a => a.User.Id == user.Id).Select(a => _builder.BuildAnswer(a))
 
                 }),

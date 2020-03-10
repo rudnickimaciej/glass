@@ -1,4 +1,5 @@
 ﻿@model Translate.ViewModels.Complex.AllQuestionsOfForumViewModel
+@using Translate.Extensions;
 @{
     Layout = "~/Views/Home/_Layout.cshtml";
 }
@@ -43,7 +44,6 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">Temat</th>
-                                    <th scope="col">Odpowiedzi</th>
                                     <th scope="col">Autor</th>
                                 </tr>
                             </thead>
@@ -65,29 +65,35 @@
                                                 <div class="media align-items-center">
 
                                                     <div class="media-body">
-                                                        <span class="mb-0 text-sm"> <a href='/questions/@question.Id'> @question.ShortContent(66)...</a> </span>
+                                                        <span class="mb-0 text-sm"> <a href='/questions/@question.Id'> @question.ShortContent(84)...</a> </span>
                                                     </div>
 
                                                 </div>
                                                 <div class="media-body">
                                                     <span class="badge badge-dot mr-1">
-                                                        @question.DateFormat
+                                                        dodano  @question.DatePosted.ToTimeSinceString() temu
                                                     </span>
+                                                    <span class="align-items-center badge badge-dot mr-1" style="color:grey">
+                                                        @if (question.AnswersCount == 1)
+                                                        {
+                                                            @question.AnswersCount <span>odpowiedź </span>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            @question.AnswersCount <span>odpowiedzi </span>
+
+
+                                                        }
+                                                    </span>
+
                                                 </div>
                                             </th>
 
-                                            <td>
-                                                <div class="media align-items-center">
-                                                    <span class="align-items-center badge badge-dot mr-1">
-                                                        @question.AnswersCount
-                                                    </span>
-                                                </div>
-
-                                            </td>
 
                                             <td>
                                                 <div class="avatar-group">
-                                                    <a href='users/@question.AuthorName' class="avatar avatar-sm" data-toggle="tooltip" data-original-title=@question.AuthorName>
+                                                    <a href='/users/@question.AuthorName' class="avatar avatar-sm" data-toggle="tooltip" data-original-title=@question.AuthorName>
                                                         <img alt="Image placeholder" src="~/Content/wwwroot/img/theme/team-1-800x800.jpg" class="rounded-circle">
                                                     </a>
 
@@ -166,7 +172,7 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <span class=" badge-dot mr-1">
-                                                        dodano @a.DateFormat przez <a href="/users/@a.AuthorName"> @a.AuthorName</a>
+                                                        dodano @a.Created.ToTimeSinceString() przez <a href="/users/@a.AuthorName"> @a.AuthorName</a>
                                                     </span>
                                                 </div>
                                             </th>
